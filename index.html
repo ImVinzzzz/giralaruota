@@ -1324,7 +1324,7 @@ function showPodium() {
   const sorted = [...G.players].sort((a,b)=>b.totalScore-a.totalScore);
   const stage  = document.getElementById('podium-stage');
   stage.innerHTML='';
-  const medals=['🥇','🥈','🥉'];
+  const medals=['🥈','🥇','🥉'];
   const order  = sorted.length===3 ? [1,0,2] : sorted.length===2 ? [1,0] : [0];
   const pclass = [2,1,3];
 
