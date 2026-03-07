@@ -1336,7 +1336,7 @@ function showPodium() {
     div.style.animationDelay=`${di*0.18}s`;
     div.innerHTML=`
       <div class="p-name">${p.name}</div>
-      <div class="p-score">${fmt(p.totalScore)} pt</div>
+      <div class="p-score">${fmt(p.totalScore)}</div> <!-- pt</div> -->
       <div class="p-block">${medals[di]}</div>`;
     stage.appendChild(div);
   });
