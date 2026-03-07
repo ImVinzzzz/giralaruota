@@ -26,15 +26,15 @@
       "wheel": [
         {"label": "150", "value": 150, "type": "score", "color": "#A93226"},
         {"label": "400", "value": 400, "type": "score", "color": "#BA4A00"},
-        {"label": "PASSA\nMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
+        {"label": "NABOO", "value": 0, "type": "passamano", "color": "#1F618D"},
         {"label": "300", "value": 300, "type": "score", "color": "#1E8449"},
         {"label": "600", "value": 600, "type": "score", "color": "#0E6655"},
         {"label": "200", "value": 200, "type": "score", "color": "#6C3483"},
         {"label": "800", "value": 800, "type": "score", "color": "#154360"},
-        {"label": "PERDE\nTUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "PALPATINE", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "350", "value": 350, "type": "score", "color": "#9A7D0A"},
         {"label": "500", "value": 500, "type": "score", "color": "#616A6B"},
-        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
+        {"label": "LUKE SKYWALKER", "value": 0, "type": "raddoppia", "color": "#B7950B"},
         {"label": "250", "value": 250, "type": "score", "color": "#1A6DA3"}
       ]
     },
