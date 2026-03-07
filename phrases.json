@@ -3,83 +3,7 @@
     {
       "id": 1,
       "topic": "POKÉMON",
-      "phrase": "PIKACHU SCELGO TE",
-      "wheel": [
-        {"label": "200", "value": 200, "type": "score", "color": "#C0392B"},
-        {"label": "300", "value": 300, "type": "score", "color": "#D35400"},
-        {"label": "500", "value": 500, "type": "score", "color": "#B7950B"},
-        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#2471A3"},
-        {"label": "400", "value": 400, "type": "score", "color": "#1E8449"},
-        {"label": "600", "value": 600, "type": "score", "color": "#117A65"},
-        {"label": "GIOVANNI", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "250", "value": 250, "type": "score", "color": "#7D3C98"},
-        {"label": "350", "value": 350, "type": "score", "color": "#5D6D7E"},
-        {"label": "MASTERBALL", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "450", "value": 450, "type": "score", "color": "#922B21"},
-        {"label": "700", "value": 700, "type": "score", "color": "#1A5276"}
-      ]
-    },
-    {
-      "id": 2,
-      "topic": "NERD WORLD",
-      "phrase": "NON SI ENTRA SEMPLICEMENTE A MORDOR",
-      "wheel": [
-        {"label": "150", "value": 150, "type": "score", "color": "#A93226"},
-        {"label": "400", "value": 400, "type": "score", "color": "#BA4A00"},
-        {"label": "NABOO", "value": 0, "type": "passamano", "color": "#1F618D"},
-        {"label": "300", "value": 300, "type": "score", "color": "#1E8449"},
-        {"label": "600", "value": 600, "type": "score", "color": "#0E6655"},
-        {"label": "200", "value": 200, "type": "score", "color": "#6C3483"},
-        {"label": "800", "value": 800, "type": "score", "color": "#154360"},
-        {"label": "PALPATINE", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "350", "value": 350, "type": "score", "color": "#9A7D0A"},
-        {"label": "500", "value": 500, "type": "score", "color": "#616A6B"},
-        {"label": "LUKE SKYWALKER", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "250", "value": 250, "type": "score", "color": "#1A6DA3"}
-      ]
-    },
-    {
-      "id": 3,
-      "topic": "STAR WARS",
-      "phrase": "LA ROTTA DI KESSEL IN MENO DI DODICI PARSEC",
-      "wheel": [
-        {"label": "300", "value": 300, "type": "score", "color": "#C0392B"},
-        {"label": "TROOPER", "value": 0, "type": "passamano", "color": "#2471A3"},
-        {"label": "450", "value": 450, "type": "score", "color": "#CA6F1E"},
-        {"label": "200", "value": 200, "type": "score", "color": "#B7950B"},
-        {"label": "FALCON", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "600", "value": 600, "type": "score", "color": "#1E8449"},
-        {"label": "350", "value": 350, "type": "score", "color": "#117A65"},
-        {"label": "MORTE NERA", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "500", "value": 500, "type": "score", "color": "#2471A3"},
-        {"label": "250", "value": 250, "type": "score", "color": "#7D3C98"},
-        {"label": "700", "value": 700, "type": "score", "color": "#424949"},
-        {"label": "400", "value": 400, "type": "score", "color": "#922B21"}
-      ]
-    },
-    {
-      "id": 4,
-      "phrase": "IL TEAM ROCKET RIPARTE ALLA VELOCITÀ DELLA LUCE",
-      "topic": "POKÈMON",
-      "wheel": [
-        {"label": "400", "value": 400, "type": "score", "color": "#922B21"},
-        {"label": "250", "value": 250, "type": "score", "color": "#CA6F1E"},
-        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "550", "value": 550, "type": "score", "color": "#1E8449"},
-        {"label": "PASSA\nMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
-        {"label": "300", "value": 300, "type": "score", "color": "#6C3483"},
-        {"label": "700", "value": 700, "type": "score", "color": "#2C3E50"},
-        {"label": "450", "value": 450, "type": "score", "color": "#0E6655"},
-        {"label": "PERDE\nTUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "200", "value": 200, "type": "score", "color": "#A04000"},
-        {"label": "600", "value": 600, "type": "score", "color": "#1A5276"},
-        {"label": "350", "value": 350, "type": "score", "color": "#7D6608"}
-      ]
-    },
-    {
-      "id": 5,
-      "topic": "STAR WARS",
-      "phrase": "EXECUTE ORDER SIXTYSIX",
+      "phrase": "LA SINDROME DI LAVANDONIA",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#C0392B"},
         {"label": "300", "value": 300, "type": "score", "color": "#A04000"},
@@ -93,6 +17,100 @@
         {"label": "350", "value": 350, "type": "score", "color": "#1A5276"},
         {"label": "700", "value": 700, "type": "score", "color": "#922B21"},
         {"label": "1000", "value": 1000, "type": "score", "color": "#7D6608"}
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "VERO NERD",
+      "phrase": "HO VISTO COSE CHE VOI UMANI",
+      "wheel": [
+        {"label": "500", "value": 500, "type": "score", "color": "#C0392B"},
+        {"label": "300", "value": 300, "type": "score", "color": "#A04000"},
+        {"label": "PASSA\nMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
+        {"label": "800", "value": 800, "type": "score", "color": "#1E8449"},
+        {"label": "250", "value": 250, "type": "score", "color": "#B7950B"},
+        {"label": "PERDE\nTUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "600", "value": 600, "type": "score", "color": "#0E6655"},
+        {"label": "400", "value": 400, "type": "score", "color": "#6C3483"},
+        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
+        {"label": "350", "value": 350, "type": "score", "color": "#1A5276"},
+        {"label": "700", "value": 700, "type": "score", "color": "#922B21"},
+        {"label": "1000", "value": 1000, "type": "score", "color": "#7D6608"}
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "FILM",
+      "phrase": "HOUSTON ABBIAMO UN PROBLEMA",
+      "wheel": [
+        {"label": "500", "value": 500, "type": "score", "color": "#C0392B"},
+        {"label": "300", "value": 300, "type": "score", "color": "#A04000"},
+        {"label": "PASSA\nMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
+        {"label": "800", "value": 800, "type": "score", "color": "#1E8449"},
+        {"label": "250", "value": 250, "type": "score", "color": "#B7950B"},
+        {"label": "PERDE\nTUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "600", "value": 600, "type": "score", "color": "#0E6655"},
+        {"label": "400", "value": 400, "type": "score", "color": "#6C3483"},
+        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
+        {"label": "350", "value": 350, "type": "score", "color": "#1A5276"},
+        {"label": "700", "value": 700, "type": "score", "color": "#922B21"},
+        {"label": "1000", "value": 1000, "type": "score", "color": "#7D6608"}
+    },
+    {
+      "id": 4,
+      "phrase": "CE TEMPO E LUOGO PER OGNI COSA",
+      "topic": "POKÈMON",
+      "wheel": [
+        {"label": "500", "value": 500, "type": "score", "color": "#C0392B"},
+        {"label": "300", "value": 300, "type": "score", "color": "#A04000"},
+        {"label": "PASSA\nMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
+        {"label": "800", "value": 800, "type": "score", "color": "#1E8449"},
+        {"label": "250", "value": 250, "type": "score", "color": "#B7950B"},
+        {"label": "PERDE\nTUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "600", "value": 600, "type": "score", "color": "#0E6655"},
+        {"label": "400", "value": 400, "type": "score", "color": "#6C3483"},
+        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
+        {"label": "350", "value": 350, "type": "score", "color": "#1A5276"},
+        {"label": "700", "value": 700, "type": "score", "color": "#922B21"},
+        {"label": "1000", "value": 1000, "type": "score", "color": "#7D6608"}
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "VERO NERD",
+      "phrase": "SEGUI IL CONIGLIO BIANCO",
+      "wheel": [
+        {"label": "500", "value": 500, "type": "score", "color": "#C0392B"},
+        {"label": "300", "value": 300, "type": "score", "color": "#A04000"},
+        {"label": "PASSA\nMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
+        {"label": "800", "value": 800, "type": "score", "color": "#1E8449"},
+        {"label": "250", "value": 250, "type": "score", "color": "#B7950B"},
+        {"label": "PERDE\nTUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "600", "value": 600, "type": "score", "color": "#0E6655"},
+        {"label": "400", "value": 400, "type": "score", "color": "#6C3483"},
+        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
+        {"label": "350", "value": 350, "type": "score", "color": "#1A5276"},
+        {"label": "700", "value": 700, "type": "score", "color": "#922B21"},
+        {"label": "1000", "value": 1000, "type": "score", "color": "#7D6608"}
+      ]
+    };
+        {
+      "id": 6,
+      "phrase": "DOBBY E UN ELFO LIBERO",
+      "topic": "FILM",
+      "wheel": [
+        {"label": "400", "value": 400, "type": "score", "color": "#922B21"},
+        {"label": "250", "value": 250, "type": "score", "color": "#CA6F1E"},
+        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
+        {"label": "550", "value": 550, "type": "score", "color": "#1E8449"},
+        {"label": "PASSA\nMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
+        {"label": "300", "value": 300, "type": "score", "color": "#6C3483"},
+        {"label": "700", "value": 700, "type": "score", "color": "#2C3E50"},
+        {"label": "450", "value": 450, "type": "score", "color": "#0E6655"},
+        {"label": "PERDE\nTUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "200", "value": 200, "type": "score", "color": "#A04000"},
+        {"label": "600", "value": 600, "type": "score", "color": "#1A5276"},
+        {"label": "350", "value": 350, "type": "score", "color": "#7D6608"}
       ]
     }
   ]
