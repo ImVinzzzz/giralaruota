@@ -2,19 +2,19 @@
   "boards": [
     {
       "id": 1,
-      "topic": "CINEMA ITALIANO",
-      "phrase": "NUOVO CINEMA PARADISO",
+      "topic": "STAR WARS",
+      "phrase": "USA LA FORZA LUKE",
       "wheel": [
         {"label": "200", "value": 200, "type": "score", "color": "#C0392B"},
         {"label": "300", "value": 300, "type": "score", "color": "#D35400"},
         {"label": "500", "value": 500, "type": "score", "color": "#B7950B"},
-        {"label": "PASSA\nMANO", "value": 0, "type": "passamano", "color": "#2471A3"},
+        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#2471A3"},
         {"label": "400", "value": 400, "type": "score", "color": "#1E8449"},
         {"label": "600", "value": 600, "type": "score", "color": "#117A65"},
-        {"label": "PERDE\nTUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "MORTE MERA", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "250", "value": 250, "type": "score", "color": "#7D3C98"},
         {"label": "350", "value": 350, "type": "score", "color": "#5D6D7E"},
-        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
+        {"label": "NABOO", "value": 0, "type": "raddoppia", "color": "#B7950B"},
         {"label": "450", "value": 450, "type": "score", "color": "#922B21"},
         {"label": "700", "value": 700, "type": "score", "color": "#1A5276"}
       ]
