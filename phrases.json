@@ -3,14 +3,14 @@
     {
       "id": 1,
       "topic": "POKÉMON",
-      "phrase": "LA SINDROME DI LAVANDONIA È MIA",
+      "phrase": "LA SINDROME DI LAVANDONIA È",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#C0392B"},
         {"label": "300", "value": 300, "type": "score", "color": "#A04000"},
-        {"label": "PASSA\nMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
+        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
         {"label": "800", "value": 800, "type": "score", "color": "#1E8449"},
         {"label": "250", "value": 250, "type": "score", "color": "#B7950B"},
-        {"label": "PERDE\nTUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "600", "value": 600, "type": "score", "color": "#0E6655"},
         {"label": "400", "value": 400, "type": "score", "color": "#6C3483"},
         {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
