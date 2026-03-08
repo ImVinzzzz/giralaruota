@@ -7,10 +7,11 @@
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#C0392B"},
         {"label": "300", "value": 300, "type": "score", "color": "#A04000"},
-        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
         {"label": "800", "value": 800, "type": "score", "color": "#1E8449"},
         {"label": "250", "value": 250, "type": "score", "color": "#B7950B"},
+        {"label": "", "value": 0, "type": "passamano", "color": "#1F618D"},
         {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
+        {"label": "", "value": 0, "type": "passamano", "color": "#1F618D"},
         {"label": "600", "value": 600, "type": "score", "color": "#0E6655"},
         {"label": "400", "value": 400, "type": "score", "color": "#6C3483"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -18,7 +19,7 @@
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "350", "value": 350, "type": "score", "color": "#1A5276"},
         {"label": "700", "value": 700, "type": "score", "color": "#922B21"},
-        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
+        {"label": "100", "value": 100, "type": "score", "color": "#A040CC"},
         {"label": "1000", "value": 1000, "type": "score", "color": "#7D6608"}
       ]
     },
