@@ -93,26 +93,7 @@
         {"label": "350", "value": 350, "type": "score", "color": "#1A5276"},
         {"label": "700", "value": 700, "type": "score", "color": "#922B21"},
         {"label": "1000", "value": 1000, "type": "score", "color": "#7D6608"}
-      ]
-    },
-        {
-      "id": 6,
-      "phrase": "DOBBY E UN ELFO LIBERO",
-      "topic": "FILM",
-      "wheel": [
-        {"label": "400", "value": 400, "type": "score", "color": "#922B21"},
-        {"label": "250", "value": 250, "type": "score", "color": "#CA6F1E"},
-        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "550", "value": 550, "type": "score", "color": "#1E8449"},
-        {"label": "PASSA\nMANO", "value": 0, "type": "passamano", "color": "#1F618D"},
-        {"label": "300", "value": 300, "type": "score", "color": "#6C3483"},
-        {"label": "700", "value": 700, "type": "score", "color": "#2C3E50"},
-        {"label": "450", "value": 450, "type": "score", "color": "#0E6655"},
-        {"label": "PERDE\nTUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "200", "value": 200, "type": "score", "color": "#A04000"},
-        {"label": "600", "value": 600, "type": "score", "color": "#1A5276"},
-        {"label": "350", "value": 350, "type": "score", "color": "#7D6608"}
-      ]
+     ]
     }
   ]
 }
