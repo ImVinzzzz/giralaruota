@@ -127,6 +127,21 @@ body::before {
   text-align:center;
 }
 .players-form { display:flex; flex-direction:column; gap:18px; width:100%; max-width:520px; }
+.players-options { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.players-options-label {
+  font-family:'Bebas Neue',cursive;
+  font-size:1rem; letter-spacing:3px;
+  color:rgba(255,215,0,0.9);
+}
+.players-select {
+  min-width:120px;
+  padding:10px 14px;
+  font-family:'Oswald',sans-serif; font-size:1rem;
+  background:rgba(255,255,255,0.08);
+  border:2px solid rgba(255,215,0,0.35);
+  border-radius:10px; color:#fff; outline:none;
+}
+.players-select option { background:#0a0e30; color:#fff; }
 .p-row { display:flex; align-items:center; gap:16px; }
 .p-badge {
   width:54px; height:54px; border-radius:50%;
@@ -593,9 +608,18 @@ body::before {
   <div class="players-logo-sm">[LOGO PICCOLO]</div>
   <h2 class="players-heading">INSERISCI I CONCORRENTI</h2>
   <div class="players-form">
-    <div class="p-row"><div class="p-badge">1</div><input class="p-input" id="p1" type="text" placeholder="Nome Concorrente 1" maxlength="18"></div>
-    <div class="p-row"><div class="p-badge">2</div><input class="p-input" id="p2" type="text" placeholder="Nome Concorrente 2" maxlength="18"></div>
-    <div class="p-row"><div class="p-badge">3</div><input class="p-input" id="p3" type="text" placeholder="Nome Concorrente 3" maxlength="18"></div>
+    <div class="players-options">
+      <div class="players-options-label">Numero giocatori</div>
+      <select id="player-count" class="players-select" onchange="updatePlayerInputs()">
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+    <div class="p-row" id="player-row-1"><div class="p-badge">1</div><input class="p-input" id="p1" type="text" placeholder="Nome Concorrente 1" maxlength="18"></div>
+    <div class="p-row" id="player-row-2"><div class="p-badge">2</div><input class="p-input" id="p2" type="text" placeholder="Nome Concorrente 2" maxlength="18"></div>
+    <div class="p-row" id="player-row-3"><div class="p-badge">3</div><input class="p-input" id="p3" type="text" placeholder="Nome Concorrente 3" maxlength="18"></div>
+    <div class="p-row" id="player-row-4"><div class="p-badge">4</div><input class="p-input" id="p4" type="text" placeholder="Nome Concorrente 4" maxlength="18"></div>
     <button class="btn-primary" onclick="startGame()">INIZIA IL GIOCO!</button>
   </div>
 </div>
@@ -834,8 +858,26 @@ async function loadBoards() {
    ──────────────────────────────────────────────────────────── */
 function goPlayers() { showScreen('screen-players'); }
 
+function getPlayerCount() {
+  return Number(document.getElementById('player-count').value);
+}
+
+function updatePlayerInputs() {
+  const count = getPlayerCount();
+  for (let i = 1; i <= 4; i++) {
+    const row = document.getElementById(`player-row-${i}`);
+    const input = document.getElementById(`p${i}`);
+    const visible = i <= count;
+    row.style.display = visible ? 'flex' : 'none';
+    if (!visible) input.value = '';
+  }
+}
+
 function startGame() {
-  const rawNames = ['p1','p2','p3'].map((id,i) => document.getElementById(id).value.trim() || `Giocatore ${i+1}`);
+  const count = getPlayerCount();
+  const rawNames = Array.from({length:count}, (_,i) =>
+    document.getElementById(`p${i+1}`).value.trim() || `Giocatore ${i+1}`
+  );
   G.players = rawNames.map(name => ({name, roundScore:0, totalScore:0}));
   G.curBoard = 0; G.curPlayer = 0;
   showTransition();
@@ -1325,7 +1367,7 @@ function showPodium() {
   const stage  = document.getElementById('podium-stage');
   stage.innerHTML='';
   const medals=['🥈','🥇','🥉'];
-  const order  = sorted.length===3 ? [1,0,2] : sorted.length===2 ? [1,0] : [0];
+  const order  = sorted.length>=3 ? [1,0,2] : sorted.length===2 ? [1,0] : [0];
   const pclass = [2,1,3];
 
   order.forEach((si,di)=>{
@@ -1413,13 +1455,17 @@ function resetResultUI() {
   document.getElementById('result-val').textContent='—';
   document.getElementById('btn-spin').disabled=false;
 }
-function restartGame() { showScreen('screen-players'); }
+function restartGame() {
+  showScreen('screen-players');
+  updatePlayerInputs();
+}
 
 /* ────────────────────────────────────────────────────────────
    INIT
    ──────────────────────────────────────────────────────────── */
 async function init() {
   await loadBoards();
+  updatePlayerInputs();
   // Draw wheel with first board segments (just to show something on logo screen)
   drawWheel(G.wheelAngle);
 }
