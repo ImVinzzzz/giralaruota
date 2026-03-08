@@ -186,12 +186,16 @@ function buildGrid(phrase) {
     const cells    = [];
     for (let c = 0; c < COLS; c++) {
       const idx = c - startCol;
-      if (!rowStr.length || idx < 0 || idx >= rowStr.length)
+      if (!rowStr.length || idx < 0 || idx >= rowStr.length) {
         cells.push({type:'empty',  char:null, revealed:false});
-      else if (rowStr[idx] === ' ')
+      } else if (rowStr[idx] === ' ') {
         cells.push({type:'space',  char:null, revealed:false});
-      else
-        cells.push({type:'letter', char:rowStr[idx], revealed:false});
+      } else {
+        const char = rowStr[idx];
+        const baseChar = char.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const isLetter = /^[A-Z]$/i.test(baseChar);
+        cells.push({type:'letter', char:char, revealed: !isLetter});
+      }
     }
     grid.push(cells);
   }
@@ -220,9 +224,13 @@ function renderGrid() {
    ──────────────────────────────────────────────────────────── */
 function revealLetter(letter) {
   let count = 0;
+  const baseLetter = letter.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   G.grid.forEach(row => row.forEach(cell => {
-    if (cell.type === 'letter' && cell.char === letter && !cell.revealed) {
-      cell.revealed = true; count++;
+    if (cell.type === 'letter' && !cell.revealed) {
+      const baseCellChar = cell.char.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      if (baseCellChar === baseLetter) {
+        cell.revealed = true; count++;
+      }
     }
   }));
   return count;
@@ -249,7 +257,12 @@ function renderKeyboard() {
       b.onclick = () => handleLetter(l);
       if (G.usedLetters.has(l)) {
         b.disabled=true;
-        const wasFound = G.grid.some(r=>r.some(c=>c.type==='letter'&&c.char===l&&c.revealed));
+        const baseL = l.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const wasFound = G.grid.some(r=>r.some(c=>{
+          if (c.type!=='letter' || !c.revealed) return false;
+          const baseC = c.char.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+          return baseC === baseL;
+        }));
         b.classList.add(wasFound?'found':'miss');
       }
       rd.appendChild(b);
@@ -281,7 +294,12 @@ function renderVowels() {
     b.onclick = () => handleVowel(v);
     if (G.usedLetters.has(v)) {
       b.disabled=true;
-      const wasFound = G.grid.some(r=>r.some(c=>c.type==='letter'&&c.char===v&&c.revealed));
+      const baseV = v.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const wasFound = G.grid.some(r=>r.some(c=>{
+        if (c.type!=='letter' || !c.revealed) return false;
+        const baseC = c.char.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return baseC === baseV;
+      }));
       b.classList.add(wasFound?'found':'miss');
     }
     el.appendChild(b);
