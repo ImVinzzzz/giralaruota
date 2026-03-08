@@ -1,0 +1,14 @@
+127.0.0.1 - - [08/Mar/2026 20:42:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:42:51] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:42:51] "GET /logo_big.png HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:42:51] "GET /logo_mini.png HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:42:51] "GET /script.js HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:42:51] "GET /logo_micro.png HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:42:51] "GET /phrases.json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:47:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:47:21] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:47:21] "GET /logo_big.png HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:47:21] "GET /logo_mini.png HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:47:22] "GET /script.js HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:47:22] "GET /logo_micro.png HTTP/1.1" 200 -
+127.0.0.1 - - [08/Mar/2026 20:47:22] "GET /phrases.json HTTP/1.1" 200 -

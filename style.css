@@ -206,9 +206,9 @@ body::before {
 /* — HEADER — */
 .g-header {
   display:flex; align-items:center; justify-content:space-between;
-  padding:6px 18px;
+  padding:16px 18px;
   background:linear-gradient(90deg, rgba(7,11,37,0.95) 0%, rgba(14,21,64,0.95) 50%, rgba(7,11,37,0.95) 100%);
-  border-bottom:2px solid rgba(255,215,0,0.22);
+  border-top:2px solid rgba(255,215,0,0.22);
   flex-shrink:0;
 }
 .g-logo-sm {
