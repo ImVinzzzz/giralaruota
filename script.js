@@ -379,7 +379,12 @@ function drawWheel(angleDeg) {
   const W=248, H=248, cx=124, cy=124, R=112;
   const segs = G.boards[G.curBoard] ? G.boards[G.curBoard].wheel : FALLBACK_BOARDS[0].wheel;
   const n = segs.length;
-  const aps = (2*Math.PI)/n; // angle per segment
+  let totalWeight = 0;
+  const segWeights = segs.map(seg => {
+    const w = (seg.type === "passamano" || seg.type === "perdetutto" || seg.type === "raddoppia") ? 1 : 3;
+    totalWeight += w;
+    return w;
+  });
 
   ctx.clearRect(0,0,W,H);
 
@@ -394,9 +399,13 @@ function drawWheel(angleDeg) {
   ctx.translate(cx,cy);
   ctx.rotate(angleDeg*Math.PI/180);
 
+  let currentAngle = -Math.PI / 2;
   segs.forEach((seg,i) => {
-    const sa = i*aps - Math.PI/2;
+    const w = segWeights[i];
+    const aps = (w / totalWeight) * (2 * Math.PI);
+    const sa = currentAngle;
     const ea = sa + aps;
+    currentAngle = ea;
 
     // Sector fill
     ctx.beginPath(); ctx.moveTo(0,0);
@@ -416,11 +425,14 @@ function drawWheel(angleDeg) {
     const lines = seg.label.split('\n');
     const dist  = R*0.64;
     if (lines.length===1) {
-      const fs = seg.type==='score' ? (seg.value>=1000?11:13) : (seg.label.length>8?10:12);
+      let fs = seg.type==='score' ? (seg.value>=1000?11:13) : (seg.label.length>8?10:12);
+      if (w === 1) fs = Math.min(fs, 8); // smaller font for thin slices
       ctx.font = `bold ${fs}px Oswald,sans-serif`;
       ctx.fillText(seg.label, dist, 5);
     } else {
-      ctx.font = 'bold 10px Oswald,sans-serif';
+      let fs = 10;
+      if (w === 1) fs = 8;
+      ctx.font = `bold ${fs}px Oswald,sans-serif`;
       ctx.fillText(lines[0], dist, -4);
       ctx.fillText(lines[1], dist,  9);
     }
@@ -455,17 +467,45 @@ function spinWheel() {
 
   const segs = G.boards[G.curBoard].wheel;
   const n = segs.length;
-  const segDeg = 360/n;
 
-  // Pick random target segment
-  const tIdx = Math.floor(Math.random()*n);
-  const within = Math.random()*segDeg*0.6 + segDeg*0.2;
+  let totalWeight = 0;
+  const segWeights = segs.map(seg => {
+    const w = (seg.type === 'passamano' || seg.type === 'perdetutto' || seg.type === 'raddoppia') ? 1 : 3;
+    totalWeight += w;
+    return w;
+  });
 
-  // Angle where tIdx lands at pointer after rotation R:
-  // segment at pointer: floor(((360 - R%360)%360)/segDeg) = tIdx
-  // => R%360 = (360 - tIdx*segDeg - within + 3600) % 360
+  // Pick random target segment based on weights
+  let rand = Math.random() * totalWeight;
+  let tIdx = 0;
+  for (let i = 0; i < n; i++) {
+    rand -= segWeights[i];
+    if (rand <= 0) {
+      tIdx = i;
+      break;
+    }
+  }
+
+  // Calculate start and end angle for the segment
+  let currentDeg = 0;
+  let tStartDeg = 0;
+  let tEndDeg = 0;
+  for (let i = 0; i < n; i++) {
+    const w = segWeights[i];
+    const deg = (w / totalWeight) * 360;
+    if (i === tIdx) {
+      tStartDeg = currentDeg;
+      tEndDeg = currentDeg + deg;
+      break;
+    }
+    currentDeg += deg;
+  }
+
+  const degSpan = tEndDeg - tStartDeg;
+  const within = tStartDeg + Math.random() * degSpan * 0.6 + degSpan * 0.2;
+
   const curMod    = G.wheelAngle % 360;
-  const wantMod   = (360 - tIdx*segDeg - within + 3600) % 360;
+  const wantMod   = (360 - within + 3600) % 360;
   let   extraDeg  = (wantMod - curMod + 360) % 360;
   if   (extraDeg < 15) extraDeg += 360;
 
