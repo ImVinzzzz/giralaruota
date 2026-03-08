@@ -222,7 +222,7 @@ body::before {
 }
 .g-topic { text-align:center; }
 .g-topic-lbl { font-size:0.68rem; letter-spacing:4px; color:rgba(255,215,0,0.5); }
-.g-topic-val { font-family:'Bebas Neue',cursive; font-size:1.5rem; letter-spacing:3px; color:var(--gold); }
+.g-topic-val { font-family:'Bebas Neue',cursive; font-size:2.5rem; letter-spacing:3px; color:var(--gold); }
 .g-dots-wrap { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
 .g-dots-lbl { font-size:0.62rem; letter-spacing:3px; color:rgba(255,255,255,0.35); }
 .g-dots { display:flex; gap:7px; }
@@ -575,3 +575,4 @@ body::before {
   to{opacity:1;transform:translateY(0);}
 }
 .anim-up { animation:fade-up 0.55s ease both; }
+
