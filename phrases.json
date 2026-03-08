@@ -83,7 +83,7 @@
     {
       "id": 5,
       "topic": "GEOGRAFIA",
-      "phrase": "UN GHIACCIAIO CONTINENTALE",
+      "phrase": "UN GHIACCIAIO CONTINENTALE IN ANTARTIDE",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#C0392B"},
         {"label": "300", "value": 300, "type": "score", "color": "#A04000"},
