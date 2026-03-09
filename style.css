@@ -655,21 +655,34 @@ body::before {
     order: 3;
     width: 100%;
     border-left: none;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     padding: 15px 10px;
     gap: 8px;
     flex: 0 0 auto;
   }
   .sc-title {
     width: 100%;
+    text-align: center;
+  }
+  #score-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
   }
   .sc-card {
-    flex: 1 1 30%;
-    min-width: 100px;
+    flex: 1 1 0;
+    min-width: 0;
     padding: 8px 10px;
+  }
+  /* If exactly 4 items, force 2x2 wrapping */
+  .sc-card:first-child:nth-last-child(4),
+  .sc-card:first-child:nth-last-child(4) ~ .sc-card {
+    flex: 1 1 calc(50% - 8px);
+    max-width: calc(50% - 4px);
   }
   .sc-name {
     font-size: 1rem;
