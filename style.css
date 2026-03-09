@@ -581,7 +581,6 @@ body::before {
    ============================================================ */
 @media (max-width: 900px) {
   #screen-game {
-    display: flex;
     flex-direction: column;
     overflow: hidden;
     height: 100vh;
