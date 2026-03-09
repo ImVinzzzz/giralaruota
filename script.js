@@ -705,20 +705,31 @@ function showPodium() {
   const sorted = [...G.players].sort((a,b)=>b.totalScore-a.totalScore);
   const stage  = document.getElementById('podium-stage');
   stage.innerHTML='';
-  const medals=['🥈','🥇','🥉'];
-  const order  = sorted.length>=3 ? [1,0,2] : sorted.length===2 ? [1,0] : [0];
-  const pclass = [2,1,3];
+  const order  = sorted.map((_, i) => i);
 
   order.forEach((si,di)=>{
     const p   = sorted[si];
-    const pc  = pclass[di];
+    const pc  = di + 1;
     const div = document.createElement('div');
     div.className=`p-place p-place-${pc} anim-up`;
     div.style.animationDelay=`${di*0.18}s`;
+    const blockContent = pc===1
+      ? `<div class="winner-card">
+          <div class="winner-crown">👑</div>
+          <div class="winner-name">${String(p.name).toUpperCase()}</div>
+          <div class="winner-score">${fmt(p.totalScore)}</div>
+        </div>`
+      : `<div class="podium-mini-card">
+          <div class="podium-mini-accent"></div>
+          <div class="podium-mini-body">
+            <div class="podium-mini-name">${String(p.name).toUpperCase()}</div>
+            <div class="podium-mini-score">${fmt(p.totalScore)}</div>
+          </div>
+        </div>`;
     div.innerHTML=`
-      <div class="p-name">${p.name}</div>
-      <div class="p-score">${fmt(p.totalScore)}</div> <!-- pt</div> -->
-      <div class="p-block">${medals[di]}</div>`;
+      <div class="p-name">${String(p.name).toUpperCase()}</div>
+      <div class="p-score">${fmt(p.totalScore)}</div>
+      <div class="p-block">${blockContent}</div>`;
     stage.appendChild(div);
   });
 
