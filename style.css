@@ -439,24 +439,56 @@ body::before {
   justify-content:center; gap:16px;
 }
 .p-place { display:flex; flex-direction:column; align-items:center; gap:10px; }
-.p-name  { font-family:'Bebas Neue',cursive; font-size:1.35rem; letter-spacing:2px; text-align:center; max-width:160px; }
-.p-score { font-family:'Bebas Neue',cursive; font-size:1.7rem; color:var(--gold); }
 .p-block {
-  display:flex; align-items:center; justify-content:center;
-  border-radius:10px 10px 0 0;
-  font-family:'Bebas Neue',cursive; font-size:3rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  border-radius:12px 12px 0 0;
+  padding:16px 14px 14px;
   width:150px;
 }
-.p-place-1 .p-name   { font-size:1.7rem; color:var(--gold); }
-.p-place-1 .p-score  { font-size:2.1rem; }
-.p-place-1 .p-block  { height:210px; width:180px; font-size:3.5rem;
-  background:linear-gradient(180deg,#FFD700,#9A7500);
+.p-crown { font-size:2.5rem; line-height:1; }
+.p-name {
+  font-family:'Bebas Neue',cursive;
+  font-size:1.35rem;
+  letter-spacing:2px;
+  text-align:center;
+  max-width:220px;
+  line-height:1;
+}
+.p-score {
+  font-family:'Bebas Neue',cursive;
+  font-size:1.7rem;
+  color:var(--gold);
+  line-height:1;
+}
+
+.p-place-1 .p-block  {
+  height:320px;
+  width:320px;
+  background:linear-gradient(180deg,#FFD700,#C28F00 85%);
   box-shadow:0 0 50px rgba(255,215,0,0.4);
+}
+.p-place-1 .p-crown  {
+  font-size:6.2rem;
+  filter:drop-shadow(0 0 20px rgba(255,255,255,0.45));
+}
+.p-place-1 .p-name   {
+  font-size:4rem;
+  letter-spacing:3px;
+  color:var(--navy);
+}
+.p-place-1 .p-score  {
+  font-size:2.2rem;
+  color:#fff;
 }
 .p-place-2 .p-block  { height:145px;
   background:linear-gradient(180deg,#D5D5D5,#707070);
   box-shadow:0 0 20px rgba(200,200,200,0.3);
 }
+.p-place-2 .p-name,
+.p-place-3 .p-name { font-size:1.3rem; color:#fff; }
 .p-place-3 .p-block  { height:100px;
   background:linear-gradient(180deg,#CD7F32,#7B4310);
   box-shadow:0 0 20px rgba(205,127,50,0.35);
@@ -695,6 +727,26 @@ body::before {
   }
   .g-topic-val {
     font-size: 1.5rem;
+  }
+  .podium-stage {
+    gap: 10px;
+  }
+  .p-place-1 .p-block {
+    width: 210px;
+    height: 230px;
+  }
+  .p-place-1 .p-crown {
+    font-size: 4.3rem;
+  }
+  .p-place-1 .p-name {
+    font-size: 2.8rem;
+  }
+  .p-place-1 .p-score {
+    font-size: 1.9rem;
+  }
+  .p-place-2 .p-block,
+  .p-place-3 .p-block {
+    width: 108px;
   }
 }
 
