@@ -248,8 +248,8 @@ function allRevealed() {
 function renderKeyboard() {
   const el = document.getElementById('keyboard');
   el.innerHTML = '';
-  // Two rows of consonants only (no A E I O U)
-  ['BCDFGHJKLMN', 'PQRSTVWXYZ'].forEach(row => {
+  // Tre righe di consonanti (senza A E I O U)
+  ['BCDFGHJ', 'KLMNPQR', 'STVWXYZ'].forEach(row => {
     const rd = document.createElement('div'); rd.className='kb-row';
     row.split('').forEach(l => {
       const b = document.createElement('button');
