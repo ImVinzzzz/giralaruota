@@ -576,3 +576,113 @@ body::before {
 }
 .anim-up { animation:fade-up 0.55s ease both; }
 
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  #screen-game {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+  .g-header {
+    order: 1;
+    padding: 8px 10px;
+  }
+  .g-main {
+    order: 2;
+    flex-direction: column;
+    overflow-y: auto;
+    flex: 1;
+    padding-bottom: 20px;
+  }
+  .center-panel {
+    order: 1;
+    width: 100%;
+    padding: 10px 5px;
+    min-height: auto;
+    flex: 0 0 auto;
+  }
+  .board-grid {
+    grid-template-columns: repeat(12, minmax(20px, 1fr));
+    grid-template-rows: repeat(4, auto);
+    gap: 2px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .cell {
+    aspect-ratio: auto;
+    height: 28px;
+    border-radius: 3px;
+  }
+  .cell-letter {
+    font-size: 1.2rem;
+    border-width: 1px;
+  }
+  .kb-row {
+    gap: 3px;
+    flex-wrap: wrap;
+  }
+  .kb-key {
+    width: 32px;
+    height: 38px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+  }
+  .vowel-row {
+    flex-wrap: wrap;
+  }
+  .wheel-panel {
+    order: 2;
+    width: 100%;
+    border-right: none;
+    border-top: 1px solid rgba(255,215,0,0.18);
+    border-bottom: 1px solid rgba(255,215,0,0.18);
+    padding: 15px 10px;
+    flex: 0 0 auto;
+  }
+  #wheel-canvas {
+    width: 220px;
+    height: 220px;
+  }
+  .btn-spin {
+    width: 180px;
+    font-size: 1.3rem;
+    padding: 8px 0;
+  }
+  .scores-panel {
+    order: 3;
+    width: 100%;
+    border-left: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 15px 10px;
+    gap: 8px;
+    flex: 0 0 auto;
+  }
+  .sc-title {
+    width: 100%;
+  }
+  .sc-card {
+    flex: 1 1 30%;
+    min-width: 100px;
+    padding: 8px 10px;
+  }
+  .sc-name {
+    font-size: 1rem;
+  }
+  .sc-round-val {
+    font-size: 1.5rem;
+  }
+  .sc-total-val {
+    font-size: 0.9rem;
+  }
+  .g-topic-val {
+    font-size: 1.5rem;
+  }
+}
+
