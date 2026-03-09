@@ -467,12 +467,12 @@ body::before {
 .p-place-2 .p-block,
 .p-place-3 .p-block,
 .p-place-4 .p-block {
-  height:74px;
+  height:82px;
   background:linear-gradient(90deg,#04104a 0%, #020a33 100%);
   border:3px solid #e2c300;
   box-shadow:0 0 18px rgba(255,215,0,0.18);
   justify-content:flex-start;
-  padding:10px 14px;
+  padding:12px 14px;
 }
 .podium-mini-card {
   display:flex;
@@ -506,7 +506,7 @@ body::before {
 .podium-mini-score {
   font-family:'Bebas Neue',cursive;
   font-size:1.6rem;
-  color:#fff;
+  color:var(--gold);
   letter-spacing:2px;
 }
 .winner-card {
