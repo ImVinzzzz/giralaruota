@@ -418,6 +418,8 @@ function drawWheel(angleDeg) {
   ctx.rotate(angleDeg*Math.PI/180);
 
   let currentAngle = -Math.PI / 2;
+
+  // 1. Sector fill
   segs.forEach((seg,i) => {
     const w = segWeights[i];
     const aps = (w / totalWeight) * (2 * Math.PI);
@@ -425,36 +427,69 @@ function drawWheel(angleDeg) {
     const ea = sa + aps;
     currentAngle = ea;
 
-    // Sector fill
     ctx.beginPath(); ctx.moveTo(0,0);
     ctx.arc(0,0,R,sa,ea); ctx.closePath();
     ctx.fillStyle = seg.color; ctx.fill();
+    ctx.strokeStyle = seg.color; ctx.lineWidth = 1; ctx.stroke();
+  });
 
-    // Sector border
-    ctx.strokeStyle='rgba(255,255,255,0.25)'; ctx.lineWidth=1.5; ctx.stroke();
+  // 2. Sector borders (radial lines) and outer circle
+  currentAngle = -Math.PI / 2;
+  segs.forEach((seg,i) => {
+    const w = segWeights[i];
+    const aps = (w / totalWeight) * (2 * Math.PI);
+    const ea = currentAngle + aps;
 
-    // Label
-    ctx.save();
-    ctx.rotate(sa + aps/2);
-    ctx.textAlign='center';
-    ctx.fillStyle='#fff';
-    ctx.shadowColor='rgba(0,0,0,0.6)'; ctx.shadowBlur=4;
-
-    const lines = seg.label.split('\n');
-    const dist  = R*0.64;
-    if (lines.length===1) {
-      let fs = seg.type==='score' ? (seg.value>=1000?11:13) : (seg.label.length>8?10:12);
-      if (w === 1) fs = Math.min(fs, 8); // smaller font for thin slices
-      ctx.font = `bold ${fs}px Oswald,sans-serif`;
-      ctx.fillText(seg.label, dist, 5);
-    } else {
-      let fs = 10;
-      if (w === 1) fs = 8;
-      ctx.font = `bold ${fs}px Oswald,sans-serif`;
-      ctx.fillText(lines[0], dist, -4);
-      ctx.fillText(lines[1], dist,  9);
+    const nextSeg = segs[(i + 1) % n];
+    if (seg.color !== nextSeg.color) {
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(R * Math.cos(ea), R * Math.sin(ea));
+      ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
     }
-    ctx.restore();
+    currentAngle = ea;
+  });
+
+  ctx.beginPath();
+  ctx.arc(0, 0, R, 0, 2 * Math.PI);
+  ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  // 3. Labels
+  currentAngle = -Math.PI / 2;
+  segs.forEach((seg,i) => {
+    const w = segWeights[i];
+    const aps = (w / totalWeight) * (2 * Math.PI);
+    const sa = currentAngle;
+    const ea = sa + aps;
+    currentAngle = ea;
+
+    if (seg.label) {
+      ctx.save();
+      ctx.rotate(sa + aps/2);
+      ctx.textAlign='center';
+      ctx.fillStyle='#fff';
+      ctx.shadowColor='rgba(0,0,0,0.6)'; ctx.shadowBlur=4;
+
+      const lines = seg.label.split('\n');
+      const dist  = R*0.64;
+      if (lines.length===1) {
+        let fs = seg.type==='score' ? (seg.value>=1000?11:13) : (seg.label.length>8?10:12);
+        if (w === 1) fs = Math.min(fs, 8); // smaller font for thin slices
+        ctx.font = `bold ${fs}px Oswald,sans-serif`;
+        ctx.fillText(seg.label, dist, 5);
+      } else {
+        let fs = 10;
+        if (w === 1) fs = 8;
+        ctx.font = `bold ${fs}px Oswald,sans-serif`;
+        ctx.fillText(lines[0], dist, -4);
+        ctx.fillText(lines[1], dist,  9);
+      }
+      ctx.restore();
+    }
   });
 
   // Center cap
@@ -774,5 +809,3 @@ async function init() {
   drawWheel(G.wheelAngle);
 }
 init();
-
-
