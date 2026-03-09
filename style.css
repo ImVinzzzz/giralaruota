@@ -496,17 +496,18 @@ body::before {
   gap:6px;
 }
 .podium-mini-name {
-  font-family:'Oswald',sans-serif;
-  font-size:2.6rem;
-  font-weight:300;
+  font-family:'Bebas Neue',cursive;
+  font-size:2.1rem;
+  font-weight:400;
   color:#fff;
-  letter-spacing:1px;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 .podium-mini-score {
   font-family:'Bebas Neue',cursive;
-  font-size:2.1rem;
-  color:var(--gold);
-  letter-spacing:1px;
+  font-size:1.6rem;
+  color:#fff;
+  letter-spacing:2px;
 }
 .winner-card {
   display:flex;
@@ -531,6 +532,7 @@ body::before {
   color:#0d237a;
   text-shadow:0 2px 6px rgba(255,255,255,0.35);
   max-width:95%;
+  text-transform:uppercase;
 }
 .winner-score {
   font-family:'Bebas Neue',cursive;

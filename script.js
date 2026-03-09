@@ -716,18 +716,18 @@ function showPodium() {
     const blockContent = pc===1
       ? `<div class="winner-card">
           <div class="winner-crown">👑</div>
-          <div class="winner-name">${p.name}</div>
+          <div class="winner-name">${String(p.name).toUpperCase()}</div>
           <div class="winner-score">${fmt(p.totalScore)}</div>
         </div>`
       : `<div class="podium-mini-card">
           <div class="podium-mini-accent"></div>
           <div class="podium-mini-body">
-            <div class="podium-mini-name">${p.name}</div>
+            <div class="podium-mini-name">${String(p.name).toUpperCase()}</div>
             <div class="podium-mini-score">${fmt(p.totalScore)}</div>
           </div>
         </div>`;
     div.innerHTML=`
-      <div class="p-name">${p.name}</div>
+      <div class="p-name">${String(p.name).toUpperCase()}</div>
       <div class="p-score">${fmt(p.totalScore)}</div>
       <div class="p-block">${blockContent}</div>`;
     stage.appendChild(div);
