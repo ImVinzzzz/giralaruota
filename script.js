@@ -3,6 +3,7 @@
    ──────────────────────────────────────────────────────────── */
 const VOWELS      = new Set(['A','E','I','O','U']);
 const VOWEL_COST  = 500;
+const MIN_WIN_ROUND_SCORE = 1000;
 
 /* ────────────────────────────────────────────────────────────
    FALLBACK DATA (usato se phrases.json non è trovato)
@@ -654,11 +655,12 @@ function resolveSolve(ok) {
 function boardSolved(winIdx) {
   revealAll(); renderGrid(); spawnConfetti();
   const w = G.players[winIdx];
-  w.totalScore += w.roundScore;
+  const awardedRoundScore = Math.max(w.roundScore, MIN_WIN_ROUND_SCORE);
+  w.totalScore += awardedRoundScore;
   renderScores();
   showWin('🏆',
     `${w.name} VINCE LA MANCHE!`,
-    `Manche: ${fmt(w.roundScore)} pt  ·  Totale: ${fmt(w.totalScore)} pt`,
+    `Manche: ${fmt(awardedRoundScore)} pt  ·  Totale: ${fmt(w.totalScore)} pt`,
     ()=>{
       G.curBoard++;
       if (G.curBoard >= G.boards.length) { setTimeout(showPodium,300); }
