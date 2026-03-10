@@ -34,6 +34,7 @@
      <img src="logo_mini.png">
   <h2 class="players-heading">I CONCORRENTI</h2>
   <div class="players-form">
+    <button class="btn-secondary" onclick="openEditor()">MODIFICA FRASI</button>
     <div class="players-options">
       <div class="players-options-label">Seleziona numero di giocatori</div>
       <select id="player-count" class="players-select" onchange="updatePlayerInputs()">
@@ -49,6 +50,23 @@
       <div class="p-row" id="player-row-3"><div class="p-badge">3</div><input class="p-input" id="p3" type="text" placeholder="Concorrente 3" maxlength="18"></div>
       <div class="p-row" id="player-row-4"><div class="p-badge">4</div><input class="p-input" id="p4" type="text" placeholder="Concorrente 4" maxlength="18"></div>
       <button class="btn-primary" onclick="startGame()">INIZIA IL GIOCO!</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SCREEN EDITOR — JSON QUESTIONS
+     ════════════════════════════════════════════ -->
+<div id="screen-editor" class="screen">
+  <img src="logo_mini.png" alt="Logo">
+  <h2 class="players-heading">EDITOR FRASI</h2>
+
+  <div class="editor-layout">
+    <p class="editor-help">Compila le schede in ordine: ID (giallo) non modificabile, argomento e frase (convertita in MAIUSCOLO automaticamente).</p>
+    <div class="editor-cards" id="editor-cards"></div>
+    <div class="editor-actions">
+      <button class="btn-secondary" onclick="saveBoardsJson()">SOVRASCRIVI JSON</button>
+      <button class="btn-secondary" onclick="closeEditor()">TORNA INDIETRO</button>
     </div>
   </div>
 </div>

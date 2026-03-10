@@ -787,3 +787,119 @@ body::before {
   }
 }
 
+
+/* ============================================================
+   ░░  SCREEN EDITOR — JSON  ░░
+   ============================================================ */
+#screen-editor {
+  background: radial-gradient(ellipse 90% 70% at 50% 40%, #1b2c80 0%, #0a0e30 55%, #000 100%);
+  gap:24px;
+  padding:24px;
+  justify-content:flex-start;
+}
+
+.editor-layout {
+  width:min(100%, 980px);
+  flex:1;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.editor-help {
+  font-size:0.95rem;
+  letter-spacing:1px;
+  color:rgba(255,255,255,0.8);
+}
+
+.editor-cards {
+  flex:1;
+  min-height:0;
+  overflow:auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding-right:6px;
+}
+
+.editor-card {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  border:2px solid rgba(255,215,0,0.35);
+  border-radius:14px;
+  background:rgba(0,0,0,0.22);
+  padding:14px;
+}
+
+.editor-card-top {
+  display:flex;
+  gap:10px;
+  align-items:stretch;
+}
+
+.editor-id-box {
+  min-width:68px;
+  padding:10px 14px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Bebas Neue', cursive;
+  font-size:1.5rem;
+  letter-spacing:2px;
+}
+
+.editor-topic-input,
+.editor-phrase-input {
+  width:100%;
+  font-family:'Oswald', sans-serif;
+  font-size:1.05rem;
+  color:#fff;
+  background:rgba(255,255,255,0.08);
+  border:2px solid rgba(255,215,0,0.35);
+  border-radius:10px;
+  padding:12px 14px;
+  outline:none;
+}
+
+.editor-topic-input:focus,
+.editor-phrase-input:focus {
+  border-color:var(--gold);
+  box-shadow:var(--shadow-gold);
+}
+
+.editor-phrase-input {
+  height:49px;
+  resize:none;
+  text-transform:uppercase;
+}
+
+.editor-actions {
+  margin-top:auto;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.btn-secondary {
+  padding:11px 24px;
+  font-family:'Bebas Neue', cursive;
+  font-size:1.1rem;
+  letter-spacing:3px;
+  background:transparent;
+  color:#fff;
+  border:2px solid rgba(255,255,255,0.45);
+  border-radius:50px;
+  cursor:pointer;
+  transition:all 0.25s;
+}
+
+.btn-secondary:hover {
+  border-color:var(--gold);
+  color:var(--gold);
+  background:rgba(255,215,0,0.08);
+}

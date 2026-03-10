@@ -76,6 +76,8 @@ const G = {
   spinning:       false,
   phase:          'spin',  // 'spin' | 'guess' | 'raddoppia'
   evCallback:     null,
+  boardsMeta:     null,
+  editorBoards:   [],
 };
 
 /* ────────────────────────────────────────────────────────────
@@ -94,10 +96,138 @@ async function loadBoards() {
     const r = await fetch('phrases.json');
     if (!r.ok) throw new Error('no json');
     const d = await r.json();
+    G.boardsMeta = d;
     G.boards = d.boards;
   } catch {
-    G.boards = FALLBACK_BOARDS;
+    G.boardsMeta = { boards: structuredClone(FALLBACK_BOARDS) };
+    G.boards = G.boardsMeta.boards;
   }
+}
+
+
+function openEditor() {
+  G.editorBoards = G.boards.map(board => ({
+    id: board.id,
+    topic: board.topic,
+    phrase: board.phrase
+  }));
+  renderEditorCards();
+  showScreen('screen-editor');
+}
+
+function closeEditor() {
+  showScreen('screen-players');
+}
+
+function renderEditorCards() {
+  const cardsEl = document.getElementById('editor-cards');
+  cardsEl.innerHTML = '';
+
+  G.editorBoards.forEach((board, idx) => {
+    const card = document.createElement('article');
+    card.className = 'editor-card';
+
+    const topRow = document.createElement('div');
+    topRow.className = 'editor-card-top';
+
+    const idBox = document.createElement('div');
+    idBox.className = 'editor-id-box';
+    idBox.textContent = `${board.id}`;
+
+    const topicInput = document.createElement('input');
+    topicInput.className = 'editor-topic-input';
+    topicInput.type = 'text';
+    topicInput.maxLength = 80;
+    topicInput.value = board.topic;
+    topicInput.placeholder = 'Argomento';
+    topicInput.dataset.idx = String(idx);
+    topicInput.dataset.field = 'topic';
+
+    const phraseInput = document.createElement('textarea');
+    phraseInput.className = 'editor-phrase-input';
+    phraseInput.maxLength = 200;
+    phraseInput.value = board.phrase;
+    phraseInput.placeholder = 'Frase da indovinare';
+    phraseInput.dataset.idx = String(idx);
+    phraseInput.dataset.field = 'phrase';
+    phraseInput.addEventListener('input', () => {
+      phraseInput.value = phraseInput.value.toUpperCase();
+    });
+
+    topRow.appendChild(idBox);
+    topRow.appendChild(topicInput);
+    card.appendChild(topRow);
+    card.appendChild(phraseInput);
+    cardsEl.appendChild(card);
+  });
+}
+
+function collectEditorValues() {
+  const topicInputs = document.querySelectorAll('.editor-topic-input');
+  topicInputs.forEach(input => {
+    const idx = Number(input.dataset.idx);
+    G.editorBoards[idx].topic = input.value.trim();
+  });
+
+  const phraseInputs = document.querySelectorAll('.editor-phrase-input');
+  phraseInputs.forEach(input => {
+    const idx = Number(input.dataset.idx);
+    G.editorBoards[idx].phrase = input.value.trim().toUpperCase();
+    input.value = G.editorBoards[idx].phrase;
+  });
+}
+
+async function saveBoardsJson() {
+  collectEditorValues();
+
+  const updatedBoards = G.boards.map((board, idx) => {
+    const edited = G.editorBoards[idx];
+    return {
+      ...board,
+      topic: edited.topic,
+      phrase: edited.phrase
+    };
+  });
+
+  G.boards = updatedBoards;
+
+  const payload = {
+    ...(G.boardsMeta || {}),
+    boards: updatedBoards
+  };
+
+  const jsonText = JSON.stringify(payload, null, 2);
+
+  if (window.showSaveFilePicker) {
+    try {
+      const handle = await window.showSaveFilePicker({
+        suggestedName: 'phrases.json',
+        types: [{
+          description: 'File JSON',
+          accept: { 'application/json': ['.json'] }
+        }]
+      });
+      const writable = await handle.createWritable();
+      await writable.write(jsonText);
+      await writable.close();
+      toast('phrases.json aggiornato correttamente');
+      return;
+    } catch {
+      // Se l'utente annulla il salvataggio, si usa il fallback download.
+    }
+  }
+
+  const blob = new Blob([jsonText], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'phrases.json';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+
+  toast('Download pronto: sostituisci il file phrases.json nel progetto');
 }
 
 /* ────────────────────────────────────────────────────────────
