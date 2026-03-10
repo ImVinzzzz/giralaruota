@@ -88,6 +88,15 @@ function showScreen(id) {
   document.getElementById(id).classList.add('active');
 }
 
+
+function normalizeBoardEntry(board) {
+  return {
+    ...board,
+    topic: (board.topic || '').toUpperCase(),
+    phrase: (board.phrase || '').toUpperCase()
+  };
+}
+
 /* ────────────────────────────────────────────────────────────
    LOAD BOARDS
    ──────────────────────────────────────────────────────────── */
@@ -97,10 +106,10 @@ async function loadBoards() {
     if (!r.ok) throw new Error('no json');
     const d = await r.json();
     G.boardsMeta = d;
-    G.boards = d.boards;
+    G.boards = d.boards.map(normalizeBoardEntry);
   } catch {
     G.boardsMeta = { boards: structuredClone(FALLBACK_BOARDS) };
-    G.boards = G.boardsMeta.boards;
+    G.boards = G.boardsMeta.boards.map(normalizeBoardEntry);
   }
 }
 
@@ -108,8 +117,8 @@ async function loadBoards() {
 function openEditor() {
   G.editorBoards = G.boards.map(board => ({
     id: board.id,
-    topic: board.topic,
-    phrase: board.phrase
+    topic: board.topic.toUpperCase(),
+    phrase: board.phrase.toUpperCase()
   }));
   renderEditorCards();
   showScreen('screen-editor');
@@ -142,6 +151,9 @@ function renderEditorCards() {
     topicInput.placeholder = 'Argomento';
     topicInput.dataset.idx = String(idx);
     topicInput.dataset.field = 'topic';
+    topicInput.addEventListener('input', () => {
+      topicInput.value = topicInput.value.toUpperCase();
+    });
 
     const phraseInput = document.createElement('textarea');
     phraseInput.className = 'editor-phrase-input';
@@ -166,7 +178,8 @@ function collectEditorValues() {
   const topicInputs = document.querySelectorAll('.editor-topic-input');
   topicInputs.forEach(input => {
     const idx = Number(input.dataset.idx);
-    G.editorBoards[idx].topic = input.value.trim();
+    G.editorBoards[idx].topic = input.value.trim().toUpperCase();
+    input.value = G.editorBoards[idx].topic;
   });
 
   const phraseInputs = document.querySelectorAll('.editor-phrase-input');
@@ -182,11 +195,11 @@ async function saveBoardsJson() {
 
   const updatedBoards = G.boards.map((board, idx) => {
     const edited = G.editorBoards[idx];
-    return {
+    return normalizeBoardEntry({
       ...board,
       topic: edited.topic,
       phrase: edited.phrase
-    };
+    });
   });
 
   G.boards = updatedBoards;
@@ -269,7 +282,7 @@ function startGame() {
 function showTransition() {
   const b = G.boards[G.curBoard];
   document.getElementById('tr-manche').textContent = `TABELLONE ${G.curBoard+1} DI ${G.boards.length}`;
-  document.getElementById('tr-topic').textContent  = b.topic;
+  document.getElementById('tr-topic').textContent  = b.topic.toUpperCase();
   document.getElementById('tr-player').textContent = G.players[G.curPlayer].name;
   showScreen('screen-transition');
 }
@@ -286,7 +299,7 @@ function launchBoard() {
   const b = G.boards[G.curBoard];
   G.grid = buildGrid(b.phrase);
 
-  document.getElementById('g-topic').textContent = b.topic;
+  document.getElementById('g-topic').textContent = b.topic.toUpperCase();
   updateDots();
   renderGrid();
   renderKeyboard();

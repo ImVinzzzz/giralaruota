@@ -875,6 +875,7 @@ body::before {
 .editor-phrase-input {
   height:49px;
   resize:none;
+  overflow-y:hidden;
   text-transform:uppercase;
 }
 
@@ -902,4 +903,54 @@ body::before {
   border-color:var(--gold);
   color:var(--gold);
   background:rgba(255,215,0,0.08);
+}
+
+
+@media (max-width: 900px) {
+  #screen-editor {
+    padding:14px;
+    gap:14px;
+  }
+
+  .editor-layout {
+    width:100%;
+    gap:10px;
+  }
+
+  .editor-help {
+    font-size:0.82rem;
+    line-height:1.25;
+  }
+
+  .editor-card {
+    padding:10px;
+    gap:8px;
+  }
+
+  .editor-id-box {
+    min-width:52px;
+    padding:8px 10px;
+    font-size:1.15rem;
+  }
+
+  .editor-topic-input,
+  .editor-phrase-input {
+    font-size:0.95rem;
+    padding:10px 11px;
+  }
+
+  .editor-phrase-input {
+    height:44px;
+  }
+
+  .editor-actions {
+    margin-top:4px;
+  }
+
+  .btn-secondary {
+    width:100%;
+    text-align:center;
+    padding:10px 14px;
+    font-size:1rem;
+  }
 }
