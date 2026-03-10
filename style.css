@@ -119,6 +119,7 @@ body::before {
   text-align:center;
 }
 .players-form { display:flex; flex-direction:column; gap:18px; width:100%; max-width:520px; }
+#players-details { display:flex; flex-direction:column; gap:18px; }
 .players-options { display:flex; align-items:center; justify-content:space-between; gap:16px; }
 .players-options-label {
   font-family:'Bebas Neue',cursive;
