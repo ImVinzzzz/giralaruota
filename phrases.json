@@ -26,7 +26,7 @@
     {
       "id": 2,
       "topic": "LEWIS CARROL",
-      "phrase": "ALICE NEL PAESE DELLE MERAVIGLIE",
+      "phrase": "AUTORE DI ALICE NEL PAESE DELLE MERAVIGLIE",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#C0392B"},
         {"label": "300", "value": 300, "type": "score", "color": "#A04000"},
@@ -63,8 +63,8 @@
     },
     {
       "id": 4,
-      "topic": "LUGLIO 1798 A PARIGI",
-      "phrase": "LA PRESA DELLA BASTIGLIA",
+      "topic": "STORIA",
+      "phrase": "A PARIGI LA PRESA DELLA BASTIGLIA",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#C0392B"},
         {"label": "300", "value": 300, "type": "score", "color": "#A04000"},
