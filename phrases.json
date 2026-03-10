@@ -93,9 +93,9 @@
         {"label": "400", "value": 400, "type": "score", "color": "#DC3545"},
         {"label": "2000", "value": 2000, "type": "score", "color": "#EF476F"},
         {"label": "900", "value": 900, "type": "score", "color": "#FD7E14"},
-        {"label": "3000", "value": 3000, "type": "score", "color": "#B7950B"}
+        {"label": "3000", "value": 3000, "type": "score", "color": "#B7950B"},
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
+        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"}
       ]
     },
     {
