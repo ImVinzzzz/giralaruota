@@ -105,11 +105,16 @@ async function loadBoards() {
 function goPlayers() { showScreen('screen-players'); }
 
 function getPlayerCount() {
-  return Number(document.getElementById('player-count').value);
+  const selectedValue = document.getElementById('player-count').value;
+  return selectedValue ? Number(selectedValue) : 0;
 }
 
 function updatePlayerInputs() {
   const count = getPlayerCount();
+  const details = document.getElementById('players-details');
+
+  details.style.display = count > 0 ? 'flex' : 'none';
+
   for (let i = 1; i <= 4; i++) {
     const row = document.getElementById(`player-row-${i}`);
     const input = document.getElementById(`p${i}`);
@@ -121,6 +126,7 @@ function updatePlayerInputs() {
 
 function startGame() {
   const count = getPlayerCount();
+  if (count < 2) return;
   const rawNames = Array.from({length:count}, (_,i) =>
     document.getElementById(`p${i+1}`).value.trim() || `Giocatore ${i+1}`
   );
@@ -807,6 +813,7 @@ function resetResultUI() {
 }
 function restartGame() {
   showScreen('screen-players');
+  document.getElementById('player-count').value = '';
   updatePlayerInputs();
 }
 
@@ -815,6 +822,7 @@ function restartGame() {
    ──────────────────────────────────────────────────────────── */
 async function init() {
   await loadBoards();
+  document.getElementById('player-count').value = '';
   updatePlayerInputs();
   // Draw wheel with first board segments (just to show something on logo screen)
   drawWheel(G.wheelAngle);

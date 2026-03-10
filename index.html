@@ -36,16 +36,19 @@
     <div class="players-options">
       <div class="players-options-label">Seleziona numero di giocatori</div>
       <select id="player-count" class="players-select" onchange="updatePlayerInputs()">
+        <option value="" selected disabled>Seleziona...</option>
         <option value="2">2</option>
-        <option value="3" selected>3</option>
+        <option value="3">3</option>
         <option value="4">4</option>
       </select>
     </div>
-    <div class="p-row" id="player-row-1"><div class="p-badge">1</div><input class="p-input" id="p1" type="text" placeholder="Concorrente 1" maxlength="18"></div>
-    <div class="p-row" id="player-row-2"><div class="p-badge">2</div><input class="p-input" id="p2" type="text" placeholder="Concorrente 2" maxlength="18"></div>
-    <div class="p-row" id="player-row-3"><div class="p-badge">3</div><input class="p-input" id="p3" type="text" placeholder="Concorrente 3" maxlength="18"></div>
-    <div class="p-row" id="player-row-4"><div class="p-badge">4</div><input class="p-input" id="p4" type="text" placeholder="Concorrente 4" maxlength="18"></div>
-    <button class="btn-primary" onclick="startGame()">INIZIA IL GIOCO!</button>
+    <div id="players-details">
+      <div class="p-row" id="player-row-1"><div class="p-badge">1</div><input class="p-input" id="p1" type="text" placeholder="Concorrente 1" maxlength="18"></div>
+      <div class="p-row" id="player-row-2"><div class="p-badge">2</div><input class="p-input" id="p2" type="text" placeholder="Concorrente 2" maxlength="18"></div>
+      <div class="p-row" id="player-row-3"><div class="p-badge">3</div><input class="p-input" id="p3" type="text" placeholder="Concorrente 3" maxlength="18"></div>
+      <div class="p-row" id="player-row-4"><div class="p-badge">4</div><input class="p-input" id="p4" type="text" placeholder="Concorrente 4" maxlength="18"></div>
+      <button class="btn-primary" onclick="startGame()">INIZIA IL GIOCO!</button>
+    </div>
   </div>
 </div>
 
