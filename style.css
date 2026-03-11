@@ -6,6 +6,7 @@
   --gold-dim:    #C8A800;
   --gold-dark:   #8B6914;
   --navy:        #070B25;
+  --cell-empty:  #2979C8;
   --navy-mid:    #0E1540;
   --navy-light:  #1A2260;
   --blue-glow:   #2979FF;
@@ -331,7 +332,11 @@ body::before {
   gap:4px;
 }
 .cell { border-radius:5px; display:flex; align-items:center; justify-content:center; }
-.cell-empty { background:transparent; }
+.cell-empty { 
+   /* background:transparent; */
+   background:var(--cell-empty);
+   border:2px solid var(--navy);
+}
 .cell-space { background:rgba(255,255,255,0.04); border-radius:3px; }
 .cell-letter {
   background:var(--cell-face);
