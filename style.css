@@ -1,12 +1,11 @@
 /* ============================================================
-   ROOT & RESET
+   ROOT & RESET  
    ============================================================ */
 :root {
   --gold:        #FFD700;
   --gold-dim:    #C8A800;
   --gold-dark:   #8B6914;
   --navy:        #070B25;
-  --cell-empty:  #15216F;
   --navy-mid:    #0E1540;
   --navy-light:  #1A2260;
   --blue-glow:   #2979FF;
@@ -14,6 +13,8 @@
   --green-win:   #2E7D32;
   --cell-face:   #F5F0E0;
   --cell-border: #C8C0A0;
+  --cell-empty:  #15216F;
+  --cell-emptyb: #1C2C94;
   --shadow-gold: 0 0 18px rgba(255,215,0,0.45);
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -335,11 +336,11 @@ body::before {
 .cell-empty { 
    /* background:transparent; */
    background:var(--cell-empty);
-   border:2px solid var(--cell-empty);
+   border:2px solid var(--cell-emptyb);
 }
 .cell-space { 
    background:var(--cell-empty);
-   border:2px solid var(--cell-empty);
+   border:2px solid var(--cell-emptyb);
    /*background:rgba(255,255,255,0.04); border-radius:3px; */ }
 .cell-letter {
   background:var(--cell-face);
