@@ -1,5 +1,5 @@
 /* ============================================================
-   ROOT & RESET face E6F5FA   F5F0E0
+   ROOT & RESET 
    ============================================================ */
 :root {
   --gold:        #FFD700;
@@ -11,7 +11,7 @@
   --blue-glow:   #2979FF;
   --red-loss:    #C62828;
   --green-win:   #2E7D32;
-  --cell-face:   #E6F5FA;
+  --cell-face:   #F5F0E0;
   --cell-border: #C8C0A0;
   --cell-empty:  #0E164A;
   --cell-emptyb: #15216F;
