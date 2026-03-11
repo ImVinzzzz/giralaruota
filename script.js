@@ -8,7 +8,10 @@ const MIN_WIN_ROUND_SCORE = 1000;
 const AUDIO = {
   ok: new Audio('ok.mp3'),
   ko: new Audio('ko.mp3'),
-  winner: new Audio('winner.mp3')
+  winner: new Audio('winner.mp3'),
+  manche: new Audio('manche.mp3'),
+  passa: new Audio('passa.mp3'),
+  perde: new Audio('perde.mp3')
 };
 
 function playSound(soundKey) {
@@ -765,8 +768,10 @@ function onSpinDone(idx) {
     G.phase='guess'; syncKeyboard();
     toast(`${seg.value} punti! Chiama una lettera.`);
   } else if (seg.type==='passamano') {
+    playSound('passa');
     showEvent('🔄','PASSAMANO!','Il turno passa al prossimo concorrente.', ()=>nextPlayer());
   } else if (seg.type==='perdetutto') {
+    playSound('perde');
     const name = G.players[G.curPlayer].name;
     showEvent('💀','PERDE TUTTO!',`${name} perde tutti i punti accumulati!`, ()=>{
       G.players[G.curPlayer].roundScore = 0;
@@ -803,6 +808,7 @@ function promptSolve() {
 function resolveSolve(ok) {
   document.getElementById('modal-solve').classList.remove('on');
   if (ok) {
+    playSound('manche');
     revealAll(); renderGrid(); spawnConfetti();
     setTimeout(()=>boardSolved(G.curPlayer), 600);
   } else {
