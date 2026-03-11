@@ -1,5 +1,5 @@
 /* ============================================================
-   ROOT & RESET E6F5FA   F5F0E0
+   ROOT & RESET face E6F5FA   F5F0E0
    ============================================================ */
 :root {
   --gold:        #FFD700;
@@ -14,7 +14,7 @@
   --cell-face:   #E6F5FA;
   --cell-border: #C8C0A0;
   --cell-empty:  #0E164A;
-  --cell-emptyb: #070B25;
+  --cell-emptyb: #15216F;
   --shadow-gold: 0 0 18px rgba(255,215,0,0.45);
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
