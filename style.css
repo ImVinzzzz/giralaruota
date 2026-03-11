@@ -365,7 +365,7 @@ body::before {
 }
 
 /* KEYBOARD */
-.keyboard { display:flex; flex-direction:column; gap:6px; margin-top:14px; }
+.keyboard { display:flex; flex-direction:column; gap:6px; margin-top:25px; }
 .kb-row { display:flex; justify-content:center; gap:5px; }
 .kb-key {
   width:48px; height:48px; border-radius:7px;
