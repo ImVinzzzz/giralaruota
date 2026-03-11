@@ -5,6 +5,21 @@ const VOWELS      = new Set(['A','E','I','O','U']);
 const VOWEL_COST  = 500;
 const MIN_WIN_ROUND_SCORE = 1000;
 
+const AUDIO = {
+  ok: new Audio('ok.mp3'),
+  ko: new Audio('ko.mp3'),
+  winner: new Audio('winner.mp3')
+};
+
+function playSound(soundKey) {
+  const sound = AUDIO[soundKey];
+  if (!sound) return;
+  sound.currentTime = 0;
+  sound.play().catch(() => {
+    // In alcuni browser la riproduzione può essere bloccata senza interazione utente.
+  });
+}
+
 /* ────────────────────────────────────────────────────────────
    FALLBACK DATA (usato se phrases.json non è trovato)
    ──────────────────────────────────────────────────────────── */
@@ -484,6 +499,7 @@ function handleVowel(letter) {
   renderGrid(); renderScores();
 
   if (count > 0) {
+    playSound('ok');
     if (btn) btn.classList.add('found');
     toast(`Vocale "${letter}": ${count} trovata/e  (−500 pt) 🎉`);
     if (allRevealed()) { setTimeout(()=>boardSolved(G.curPlayer), 700); return; }
@@ -491,6 +507,7 @@ function handleVowel(letter) {
     G.phase='spin'; G.spinResult=null;
     document.getElementById('result-val').textContent='—';
   } else {
+    playSound('ko');
     if (btn) btn.classList.add('miss');
     toast(`"${letter}" non presente  (−500 pt). Turno al prossimo...`);
     setTimeout(nextPlayer, 1400);
@@ -514,6 +531,7 @@ function handleLetter(letter) {
   renderGrid();
 
   if (count > 0) {
+    playSound('ok');
     btn.classList.add('found');
     if (G.phase === 'raddoppia') {
       G.players[G.curPlayer].roundScore *= 2;
@@ -529,6 +547,7 @@ function handleLetter(letter) {
     G.phase='spin'; G.spinResult=null;
     document.getElementById('result-val').textContent='—';
   } else {
+    playSound('ko');
     btn.classList.add('miss');
     toast('Lettera non presente! Turno al prossimo...');
     setTimeout(nextPlayer, 1300);
@@ -885,6 +904,7 @@ function showPodium() {
   });
 
   spawnConfetti();
+  playSound('winner');
   showScreen('screen-podium');
 }
 
