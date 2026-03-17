@@ -25,7 +25,7 @@
     },
     {
       "id": 2,
-      "topic": "D&D",
+      "topic": "DUNGEONS & DRAGONS",
       "phrase": "SCUDO DELLA FEDE E PALLA DI FUOCO",
       "wheel": [
         {"label": "800", "value": 800, "type": "score", "color": "#1971C2"},
