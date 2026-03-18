@@ -3,7 +3,7 @@
     {
       "id": 1,
       "topic": "POKÉMON",
-      "phrase": "GOTTA CATCH EM ALL",
+      "phrase": "GOTTA CATCH 'EM ALL",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
