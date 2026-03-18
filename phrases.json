@@ -101,7 +101,7 @@
     {
       "id": 5,
       "topic": "POKÉMON... AGAIN",
-      "phrase": "LA LEGA DELL'ALTOPIANO BLU",
+      "phrase": "LA LEGA DELL' ALTOPIANO BLU",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
