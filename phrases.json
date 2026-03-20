@@ -2,8 +2,8 @@
   "boards": [
     {
       "id": 1,
-      "topic": "POKÉMON",
-      "phrase": "GOTTA CATCH 'EM ALL",
+      "topic": "LUGLIO 1969",
+      "phrase": "ALLUNAGGIO DELL'APOLLO UNDICI",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
@@ -25,8 +25,8 @@
     },
     {
       "id": 2,
-      "topic": "DUNGEONS & DRAGONS",
-      "phrase": "SCUDO DELLA FEDE E PALLA DI FUOCO",
+      "topic": "PROVERBI",
+      "phrase": "NON È TUTTO ORO QUEL CHE LUCCICA",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
@@ -48,8 +48,8 @@
     },
     {
       "id": 3,
-      "topic": "GDT: AMORE E ODIO",
-      "phrase": "MANNAGGIA AGRICOLA E CHI LO HA INVENTATO!",
+      "topic": "GIANNI MORANDI",
+      "phrase": "UNO SU MILLE CE LA FA",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "400", "value": 400, "type": "score", "color": "#BE4BDB"},
@@ -71,8 +71,8 @@
     },
     {
       "id": 4,
-      "topic": "MARIO MARIO",
-      "phrase": "SALVARE PEACH DALLE GRINFIE DI  BOWSER",
+      "topic": "ANIMALI",
+      "phrase": "IL POLPO HA TRE CUORI E SANGUE BLU",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -100,8 +100,8 @@
     },
     {
       "id": 5,
-      "topic": "POKÉMON... AGAIN",
-      "phrase": "LA LEGA DELL' ALTOPIANO BLU",
+      "topic": "ASTRONOMIA",
+      "phrase": "IL SOLE SORGE A EST",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -129,8 +129,8 @@
     },
     {
       "id": 6,
-      "topic": "SENGOKU... ALL'INIZIO",
-      "phrase": "GRANDE AMMIRAGLIO DELLA MARINA",
+      "topic": "GEOGRAFIA",
+      "phrase": "LA FOSSA DELLE MARIANNE",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -158,8 +158,8 @@
     },
     {
       "id": 7,
-      "topic": "STAR WARS: IL RADIANT VII",
-      "phrase": "INCROCIATORE CONSOLARE REPUBBLICANO",
+      "topic": "CARLO V D'ASBURGO",
+      "phrase": "IL SOLE NON TRAMONTA MAI SUL MIO IMPERO",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -187,8 +187,8 @@
     },
     {
       "id": 8,
-      "topic": "12 MARZO 1997",
-      "phrase": "È VENUTO AL MONDO IL NOSTRO AMATO PALADINO",
+      "topic": "FREDDURE",
+      "phrase": "COLMO PER UN IDRAULICO: NON CAPIRE UN TUBO!",
       "wheel": [
         {"label": "800", "value": 800, "type": "score", "color": "#40C057"},
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
