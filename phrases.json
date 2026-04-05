@@ -2,7 +2,7 @@
   "boards": [
     {
       "id": 1,
-      "topic": "PASQUA",
+      "topic": "PASQUA GASTRONOMICA",
       "phrase": "PRANZO PASQUALE IN FAMIGLIA",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
@@ -25,7 +25,7 @@
     },
     {
       "id": 2,
-      "topic": "PASQUA",
+      "topic": "PASQUA BESTIALE",
       "phrase": "IL CONIGLIETTO NASCONDE LE UOVA",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
@@ -49,7 +49,7 @@
     {
       "id": 3,
       "topic": "PASQUA",
-      "phrase": "UOVO DI CIOCCOLATO FONDENTE O AL LATTE",
+      "phrase": "UOVA DI CIOCCOLATO FONDENTE O AL LATTE",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "400", "value": 400, "type": "score", "color": "#BE4BDB"},
@@ -71,8 +71,8 @@
     },
     {
       "id": 4,
-      "topic": "PASQUA",
-      "phrase": "ARROSTATA DI PASQUETTA",
+      "topic": "OGGI",
+      "phrase": "ARROSTATA DI PASQUETTA CON GLI AMICI",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -100,8 +100,8 @@
     },
     {
       "id": 5,
-      "topic": "PASQUA",
-      "phrase": "GRANDI SORPRESE DENTRO L'UOVO",
+      "topic": "PASQUA LUDICA",
+      "phrase": "GRANDI SORPRESE DENTRO LE UOVA",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -129,8 +129,8 @@
     },
     {
       "id": 6,
-      "topic": "PASQUA",
-      "phrase": "IL COLMO PER UN UOVO? SENTIRSI SBATTUTO",
+      "topic": "FREDDURA DI PASQUA",
+      "phrase": "IL COLMO PER UN UOVO? SENTIRSI SBATTUTO!",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -158,7 +158,7 @@
     },
     {
       "id": 7,
-      "topic": "PASQUA",
+      "topic": "PASQUA VOLATILE",
       "phrase": "UN PULCINO GIALLO CHE FA PIO PIO",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -187,8 +187,8 @@
     },
     {
       "id": 8,
-      "topic": "PASQUA",
-      "phrase": "PIOVERÀ A PASQUETTA?",
+      "topic": "MISTERO TRADIZIONALE",
+      "phrase": "QUEST'ANNO PIOVERÀ A PASQUETTA?",
       "wheel": [
         {"label": "800", "value": 800, "type": "score", "color": "#40C057"},
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
@@ -213,6 +213,35 @@
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "5000", "value": 5000, "type": "score", "color": "#B7950B"}
      ]
+    },
+    {
+      "id": 9,
+      "topic": "L'ISOLA",
+      "phrase": "TE PITO O TE HENUA È L'OMBELICO DEL MONDO",
+      "wheel": [
+        {"label": "800", "value": 800, "type": "score", "color": "#40C057"},
+        {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
+        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
+        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
+        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
+        {"label": "300", "value": 300, "type": "score", "color": "#FD7E14"},
+        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "600", "value": 600, "type": "score", "color": "#EF476F"},
+        {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
+        {"label": "1000", "value": 1000, "type": "score", "color": "#FD7E14"},
+        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
+        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
+        {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
+        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
+        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
+        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
+        {"label": "5000", "value": 5000, "type": "score", "color": "#B7950B"}
+     ]]
     }
   ]
 }
