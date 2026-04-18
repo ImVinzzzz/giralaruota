@@ -26,7 +26,7 @@
     {
       "id": 2,
       "topic": "NONNA... TER",
-      "phrase": "RICCARDO AURORA NATHAN: LE NOSTREI GIOIE",
+      "phrase": "RICCARDO AURORA E NATHAN: LE NOSTRE GIOIE",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
