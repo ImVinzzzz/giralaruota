@@ -26,7 +26,7 @@
     {
       "id": 2,
       "topic": "NONNA... TER",
-      "phrase": "RICCARDO AURORA NATHAN I NOSTRI TESORI",
+      "phrase": "RICCARDO AURORA NATHAN: LE NOSTREI GIOIE",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
@@ -49,7 +49,7 @@
     {
       "id": 3,
       "topic": "NONNA... IN TV",
-      "phrase": "A PRANZO CON LA SIGNORA IN GIALLO",
+      "phrase": "OGNI GIORNO A PRANZO CON LA SIGNORA IN GIALLO",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "400", "value": 400, "type": "score", "color": "#BE4BDB"},
@@ -72,7 +72,7 @@
     {
       "id": 4,
       "topic": "NONNA... E L'ANAGRAFE",
-      "phrase": "SETTANTADUE ANNI DI DOLCEZZE",
+      "phrase": "SETTANTADUE ANNI DI DOLCEZZE E TANTO AMORE",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -101,7 +101,7 @@
     {
       "id": 5,
       "topic": "NONNA... IN CUCINA",
-      "phrase": "LUISA O CATIA È LEI LA REGINA DEI DOLCI",
+      "phrase": "LUISA O CATIA È SOLO LEI LA REGINA DEI DOLCI",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -130,7 +130,7 @@
     {
       "id": 6,
       "topic": "NONNA... IN CUCINA",
-      "phrase": "UN ALTRO DOLCE SPARITO MISTERIOSAMENTE",
+      "phrase": "UN ALTRO DOLCE SPARITO SENZA TRACCE",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
