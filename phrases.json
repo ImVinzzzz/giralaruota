@@ -2,8 +2,8 @@
   "boards": [
     {
       "id": 1,
-      "topic": "PASQUA GASTRONOMICA",
-      "phrase": "PRANZO PASQUALE IN FAMIGLIA",
+      "topic": "NONNA... AI FORNELLI",
+      "phrase": "CROSTATE SPECIALI FATTE IN CASA",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
@@ -25,8 +25,8 @@
     },
     {
       "id": 2,
-      "topic": "PASQUA D'OLTREPCEANO",
-      "phrase": "UN CONIGLIETTO NASCONDE LE UOVA",
+      "topic": "NONNA... TER",
+      "phrase": "RICCARDO AURORA NATHAN I NOSTRI TESORI",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
@@ -48,8 +48,8 @@
     },
     {
       "id": 3,
-      "topic": "PASQUA DOLCE",
-      "phrase": "UOVA DI CIOCCOLATO FONDENTE O AL LATTE",
+      "topic": "NONNA... IN TV",
+      "phrase": "A PRANZO CON LA SIGNORA IN GIALLO",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "400", "value": 400, "type": "score", "color": "#BE4BDB"},
@@ -71,8 +71,8 @@
     },
     {
       "id": 4,
-      "topic": "PASQUA... OGGI",
-      "phrase": "ARROSTATA DI PASQUETTA CON GLI AMICI",
+      "topic": "NONNA... E L'ANAGRAFE",
+      "phrase": "SETTANTADUE ANNI DI DOLCEZZE",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -100,8 +100,8 @@
     },
     {
       "id": 5,
-      "topic": "PASQUA LUDICA",
-      "phrase": "GRANDI SORPRESE DENTRO LE UOVA",
+      "topic": "NONNA... IN CUCINA",
+      "phrase": "LUISA O CATIA È LEI LA REGINA DEI DOLCI",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -129,8 +129,8 @@
     },
     {
       "id": 6,
-      "topic": "FREDDURA... DI PASQUA",
-      "phrase": "IL COLMO PER UN UOVO? SENTIRSI SBATTUTO!",
+      "topic": "NONNA... IN CUCINA",
+      "phrase": "UN ALTRO DOLCE SPARITO MISTERIOSAMENTE",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -158,8 +158,8 @@
     },
     {
       "id": 7,
-      "topic": "GLI UCCELLI... DI PASQUA",
-      "phrase": "UN PULCINO GIALLO CHE FA PIO PIO",
+      "topic": "16 APRILE 1954",
+      "phrase": "SAM SNEAD VINCE IL MASTER DI GOLF",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -187,8 +187,8 @@
     },
     {
       "id": 8,
-      "topic": "MISTERO E TRADIZIONE",
-      "phrase": "QUEST'ANNO PIOVERÀ A PASQUETTA?",
+      "topic": "16 APRILE 2026",
+      "phrase": "BUON COMPLEANNO NONNA CATIA!",
       "wheel": [
         {"label": "800", "value": 800, "type": "score", "color": "#40C057"},
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
