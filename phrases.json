@@ -26,7 +26,7 @@
     {
       "id": 2,
       "topic": "21 APRILE 1509",
-      "phrase": "ERICO VIII È PROCLAMATO RE D'INGHILTERRA",
+      "phrase": "ENRICO VIII È IL NUOVO RE D' INGHILTERRA",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
@@ -49,7 +49,7 @@
     {
       "id": 3,
       "topic": "21 APRILE 1796",
-      "phrase": "NAPOLEONE BONAPARTE VINCE LA BATTAGLIA DI MONDOVÌ",
+      "phrase": "NAPOLEONE BONAPARTE VINCE A MONDOVÌ",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "400", "value": 400, "type": "score", "color": "#BE4BDB"},
@@ -72,7 +72,7 @@
     {
       "id": 4,
       "topic": "21 APRILE 1884",
-      "phrase": "LEONE XIII PROMULGA LA HUMANUS GENUS CONRTO LA MASSONERIA",
+      "phrase": "LEONE XIII PROMULGA LA HUMANUS GENUS",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -101,7 +101,7 @@
     {
       "id": 5,
       "topic": "21 APRILE 1900",
-      "phrase": "LA PRIMA EDIZIPONE DEL SALONE DEL MOBILE A TORINO",
+      "phrase": "A TORINO NASCE IL SALONE DELLL'AUTOMOBILE",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -188,7 +188,7 @@
     {
       "id": 8,
       "topic": "21 APRILE 2026",
-      "phrase": "BUON COMPLEANNO AL NOSTRO PICCOLO MAGO DI QUARTIERE",
+      "phrase": "AUGURI AL NOSTRO PICCOLO MAGO DI QUARTIERE",
       "wheel": [
         {"label": "800", "value": 800, "type": "score", "color": "#40C057"},
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
