@@ -240,7 +240,7 @@
     {
       "id": 10,
       "topic": "LA SOLUZIONE",
-      "phrase": "LA RISPOSTA È ALL'INGRESSO VICINO LA GALLAX",
+      "phrase": "LA RISPOSTA È ALL'INGRESSO VICINO LA KALLAX",
       "wheel": [
         {"label": "800", "value": 800, "type": "score", "color": "#40C057"},
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
