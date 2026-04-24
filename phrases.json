@@ -211,7 +211,7 @@
     {
       "id": 9,
       "topic": "21 APRILE 2026",
-      "phrase": "AUGURI AL NOSTRO PICCOLO MAGO DI QUARTIERE",
+      "phrase": "AUGURI CARO AMICHEVOLE MAGO DI QUARTIERE",
       "wheel": [
         {"label": "800", "value": 800, "type": "score", "color": "#40C057"},
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
