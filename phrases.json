@@ -66,7 +66,7 @@
         {"label": "200", "value": 200, "type": "score", "color": "#40C057"},
         {"label": "700", "value": 700, "type": "score", "color": "#EF476F"},
         {"label": "400", "value": 400, "type": "score", "color": "#FD7E14"},
-        {"label": "2000", "value": 2000, "type": "score", "color": "#B7950B"}
+        {"label": "1500", "value": 1500, "type": "score", "color": "#B7950B"}
       ]
     },
     {
@@ -89,7 +89,7 @@
         {"label": "400", "value": 400, "type": "score", "color": "#BE4BDB"},
         {"label": "700", "value": 700, "type": "score", "color": "#EF476F"},
         {"label": "400", "value": 400, "type": "score", "color": "#FD7E14"},
-        {"label": "2500", "value": 2500, "type": "score", "color": "#B7950B"}
+        {"label": "2000", "value": 2000, "type": "score", "color": "#B7950B"}
       ]
     },
     {
@@ -118,7 +118,7 @@
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "3000", "value": 3000, "type": "score", "color": "#B7950B"}
+        {"label": "2000", "value": 2000, "type": "score", "color": "#B7950B"}
       ]
     },
     {
@@ -129,16 +129,14 @@
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "400", "value": 400, "type": "score", "color": "#82C91E"},
+        {"label": "900", "value": 900, "type": "score", "color": "#82C91E"},
         {"label": "500", "value": 500, "type": "score", "color": "#40C057"},
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "600", "value": 600, "type": "score", "color": "#FAB005"},
         {"label": "700", "value": 700, "type": "score", "color": "#FD7E14"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "400", "value": 400, "type": "score", "color": "#82C91E"},
         {"label": "300", "value": 300, "type": "score", "color": "#EF476F"},
         {"label": "800", "value": 800, "type": "score", "color": "#1971C2"},
         {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
@@ -147,7 +145,7 @@
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "3500", "value": 3500, "type": "score", "color": "#B7950B"}
+        {"label": "2500", "value": 2500, "type": "score", "color": "#B7950B"}
       ]
     },
     {
@@ -155,9 +153,9 @@
       "topic": "ROUND FINALE",
       "phrase": "PRECIPITAZIONI ABBONDANTI SULLE ALPI OCCIDENTALI",
       "wheel": [
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
+        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
+        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
+        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "400", "value": 400, "type": "score", "color": "#82C91E"},
         {"label": "500", "value": 500, "type": "score", "color": "#40C057"},
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
@@ -176,7 +174,7 @@
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "5000", "value": 5000, "type": "score", "color": "#B7950B"}
+        {"label": "3000", "value": 3000, "type": "score", "color": "#B7950B"}
      ]
     }
   ]
