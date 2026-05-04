@@ -26,7 +26,7 @@
     {
       "id": 2,
       "topic": "21 APRILE 753 AC",
-      "phrase": "ROMOLO TRACCIA UN SOLCO SUL PALATINO",
+      "phrase": "ROMOLO TRACCIA UN SOLCO SUL COLLE PALATINO",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
@@ -48,9 +48,9 @@
     },
     {
       "id": 3,
-      "topic": "21 APRILE 1509",
-      "phrase": "INGHILTERRA: ENRICO VIII È IL NUOVO RE",
+      "topic": "SOFIA",
       "wheel": [
+      "phrase": "È LA CAPITALE UNGHERESE E UN BEL FIORE BIANCO E ROSA",
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
         {"label": "800", "value": 800, "type": "score", "color": "#82C91E"},
