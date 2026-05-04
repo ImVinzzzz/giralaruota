@@ -328,7 +328,7 @@ body::before {
 /* BOARD GRID */
 .board-grid {
   display:grid;
-  grid-template-columns:repeat(12, 56px);
+  grid-template-columns:repeat(14, 56px);
   grid-template-rows:repeat(4, 56px);
   gap:4px;
 }
@@ -347,7 +347,7 @@ body::before {
   border:2px solid var(--cell-border);
   box-shadow:inset 0 2px 5px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.25);
   font-family:'Bebas Neue',cursive;
-  font-size:1.55rem; font-weight:700;
+  font-size:1.5rem; font-weight:700;
   color:transparent;
   transition:all 0.2s;
 }
@@ -703,7 +703,7 @@ body::before {
     flex: 0 0 auto;
   }
   .board-grid {
-    grid-template-columns: repeat(12, minmax(20px, 1fr));
+    grid-template-columns: repeat(14, minmax(20px, 1fr));
     grid-template-rows: repeat(4, auto);
     gap: 2px;
     width: 100%;
