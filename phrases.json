@@ -26,7 +26,7 @@
     {
       "id": 2,
       "topic": "21 APRILE 753 AC",
-      "phrase": "ROMOLO TRACCIA UN SOLCO SUL COLLE PALATINO",
+      "phrase": "ROMOLO TRACCIA UN SOLCO SUL COLLE PALATINO E FONDA ROMA",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
@@ -43,7 +43,7 @@
         {"label": "100", "value": 100, "type": "score", "color": "#DC3545"},
         {"label": "700", "value": 700, "type": "score", "color": "#EF476F"},
         {"label": "400", "value": 400, "type": "score", "color": "#FD7E14"},
-        {"label": "1000", "value": 1000, "type": "score", "color": "#B7950B"}
+        {"label": "1500", "value": 1500, "type": "score", "color": "#B7950B"}
       ]
     },
     {
@@ -66,7 +66,7 @@
         {"label": "200", "value": 200, "type": "score", "color": "#40C057"},
         {"label": "700", "value": 700, "type": "score", "color": "#EF476F"},
         {"label": "400", "value": 400, "type": "score", "color": "#FD7E14"},
-        {"label": "1500", "value": 1500, "type": "score", "color": "#B7950B"}
+        {"label": "2000", "value": 2000, "type": "score", "color": "#B7950B"}
       ]
     },
     {
@@ -89,12 +89,12 @@
         {"label": "400", "value": 400, "type": "score", "color": "#BE4BDB"},
         {"label": "700", "value": 700, "type": "score", "color": "#EF476F"},
         {"label": "400", "value": 400, "type": "score", "color": "#FD7E14"},
-        {"label": "2000", "value": 2000, "type": "score", "color": "#B7950B"}
+        {"label": "2500", "value": 2500, "type": "score", "color": "#B7950B"}
       ]
     },
     {
       "id": 5,
-      "topic": "(ARI)SOFIA",
+      "topic": "(ARI) SOFIA",
       "phrase": "LEONE",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -118,13 +118,13 @@
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "2500", "value": 2500, "type": "score", "color": "#B7950B"}
+        {"label": "3000", "value": 3000, "type": "score", "color": "#B7950B"}
       ]
     },
     {
       "id": 6,
-      "topic": "(ARI)LUCREZIA",
-      "phrase": "INTRIGHI E CONGIURE DI PALAZZO NEL DUCATO DI FERRARA",
+      "topic": "(ARI) LUCREZIA",
+      "phrase": "FERRARA: INTRIGHI E VELENI A CORTE PER I BORGIA",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -147,13 +147,13 @@
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
         {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "3000", "value": 3000, "type": "score", "color": "#B7950B"}
+        {"label": "3500", "value": 3500, "type": "score", "color": "#B7950B"}
       ]
     },
     {
       "id": 7,
-      "topic": "21 APRILE 1960",
-      "phrase": "BRASILIA INAUGURATA CAPITALE DEL BRASILE",
+      "topic": "ROUND FINALE",
+      "phrase": "PRECIPITAZIONI ABBONDANTI SULLE ALPI OCCIDENTALI",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -170,93 +170,6 @@
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "300", "value": 300, "type": "score", "color": "#EF476F"},
         {"label": "800", "value": 800, "type": "score", "color": "#1971C2"},
-        {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "3000", "value": 3000, "type": "score", "color": "#B7950B"}
-      ]
-    },
-    {
-      "id": 8,
-      "topic": "21 APRILE 1997",
-      "phrase": "AL CINEMA ESCE LA VITA È BELLA DI BENIGNI",
-      "wheel": [
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "400", "value": 400, "type": "score", "color": "#82C91E"},
-        {"label": "500", "value": 500, "type": "score", "color": "#40C057"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "600", "value": 600, "type": "score", "color": "#FAB005"},
-        {"label": "700", "value": 700, "type": "score", "color": "#FD7E14"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "300", "value": 300, "type": "score", "color": "#EF476F"},
-        {"label": "800", "value": 800, "type": "score", "color": "#1971C2"},
-        {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "4000", "value": 4000, "type": "score", "color": "#B7950B"}
-      ]
-    },
-    {
-      "id": 9,
-      "topic": "21 APRILE 2026",
-      "phrase": "AUGURI CARO AMICHEVOLE MAGO DI QUARTIERE",
-      "wheel": [
-        {"label": "800", "value": 800, "type": "score", "color": "#40C057"},
-        {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "300", "value": 300, "type": "score", "color": "#FD7E14"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "600", "value": 600, "type": "score", "color": "#EF476F"},
-        {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
-        {"label": "1000", "value": 1000, "type": "score", "color": "#FD7E14"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "5000", "value": 5000, "type": "score", "color": "#B7950B"}
-     ]
-    },
-    {
-      "id": 10,
-      "topic": "LA SOLUZIONE",
-      "phrase": "LA RISPOSTA È ALL'INGRESSO VICINO LA KALLAX",
-      "wheel": [
-        {"label": "800", "value": 800, "type": "score", "color": "#40C057"},
-        {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "PASSAMANO", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "", "value": 0, "type": "passamano", "color": "#3BC9DB"},
-        {"label": "300", "value": 300, "type": "score", "color": "#FD7E14"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "600", "value": 600, "type": "score", "color": "#EF476F"},
-        {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
-        {"label": "1000", "value": 1000, "type": "score", "color": "#FD7E14"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
         {"label": "RADDOPPIA", "value": 0, "type": "raddoppia", "color": "#B7950B"},
         {"label": "", "value": 0, "type": "raddoppia", "color": "#B7950B"},
