@@ -49,8 +49,8 @@
     {
       "id": 3,
       "topic": "SOFIA",
-      "wheel": [
       "phrase": "È LA CAPITALE UNGHERESE E UN BEL FIORE BIANCO E ROSA",
+      "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
         {"label": "800", "value": 800, "type": "score", "color": "#82C91E"},
