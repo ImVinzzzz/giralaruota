@@ -72,7 +72,7 @@
     {
       "id": 4,
       "topic": "LUCREZIA",
-      "phrase": "A ROMA È ANTICO SEGNO DI FEDELTÀ CONIUGALE E GRANDE VIRTÙ",
+      "phrase": "PER IL MITO DI ROMA È SIMBOLO DI FEDELTÀ CONIUGALE",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "400", "value": 400, "type": "score", "color": "#BE4BDB"},
@@ -95,7 +95,7 @@
     {
       "id": 5,
       "topic": "(ARI) SOFIA",
-      "phrase": "LEONE",
+      "phrase": "LOREN: ICONA DI BELLEZZA ITALIANA E PREMIO OSCAR",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
