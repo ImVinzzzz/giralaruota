@@ -87,7 +87,7 @@ const G = {
   players:        [],   // [{name, roundScore, totalScore}]
   curPlayer:      0,
   curBoard:       0,
-  grid:           [],   // 4×12 [{type, char, revealed}]
+  grid:           [],   // 4×14 [{type, char, revealed}]
   usedLetters:    new Set(),
   spinResult:     null,
   wheelAngle:     0,
@@ -330,11 +330,11 @@ function launchBoard() {
 }
 
 /* ────────────────────────────────────────────────────────────
-   GRID BUILDER  (12 cols × 4 rows)
+   GRID BUILDER  (14 cols × 4 rows)
    ──────────────────────────────────────────────────────────── */
 function buildGrid(phrase) {
   const words = phrase.toUpperCase().split(' ');
-  const COLS = 12, ROWS = 4;
+  const COLS = 14, ROWS = 4;
   // Pack words into rows
   const rows = [];
   let cur = [], curLen = 0;

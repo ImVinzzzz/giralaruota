@@ -328,7 +328,7 @@ body::before {
 /* BOARD GRID */
 .board-grid {
   display:grid;
-  grid-template-columns:repeat(12, 56px);
+  grid-template-columns:repeat(14, 56px);
   grid-template-rows:repeat(4, 56px);
   gap:4px;
 }
@@ -703,7 +703,7 @@ body::before {
     flex: 0 0 auto;
   }
   .board-grid {
-    grid-template-columns: repeat(12, minmax(20px, 1fr));
+    grid-template-columns: repeat(14, minmax(20px, 1fr));
     grid-template-rows: repeat(4, auto);
     gap: 2px;
     width: 100%;
