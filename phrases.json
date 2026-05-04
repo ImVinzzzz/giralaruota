@@ -71,8 +71,8 @@
     },
     {
       "id": 4,
-      "topic": "21 APRILE 1796",
-      "phrase": "NAPOLEONE BONAPARTE VINCE A MONDOVÌ",
+      "topic": "LUCREZIA",
+      "phrase": "A ROMA è simbolo di fedeltà coniugale e virtù",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "400", "value": 400, "type": "score", "color": "#BE4BDB"},
