@@ -72,7 +72,7 @@
     {
       "id": 4,
       "topic": "LUCREZIA",
-      "phrase": "A ROMA è simbolo di fedeltà coniugale e virtù",
+      "phrase": "A ROMA È ANTICO SEGNO DI FEDELTÀ CONIUGALE E GRANDE VIRTÙ",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "400", "value": 400, "type": "score", "color": "#BE4BDB"},
@@ -94,8 +94,8 @@
     },
     {
       "id": 5,
-      "topic": "21 APRILE 1884",
-      "phrase": "LEONE XIII PROMULGA LA HUMANUS GENUS",
+      "topic": "(ARI)SOFIA",
+      "phrase": "LEONE",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
@@ -123,8 +123,8 @@
     },
     {
       "id": 6,
-      "topic": "21 APRILE 1900",
-      "phrase": "A TORINO NASCE IL SALONE DELLA AUTOMOBILE",
+      "topic": "(ARI)LUCREZIA",
+      "phrase": "INTRIGHI E CONGIURE DI PALAZZO NEL DUCATO DI FERRARA",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "PERDE TUTTO", "value": 0, "type": "perdetutto", "color": "#1C2833"},
