@@ -277,7 +277,7 @@ function updatePlayerInputs() {
 
   details.style.display = count > 0 ? 'flex' : 'none';
 
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i <= 6; i++) {
     const row = document.getElementById(`player-row-${i}`);
     const input = document.getElementById(`p${i}`);
     const visible = i <= count;
