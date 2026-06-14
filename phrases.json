@@ -3,7 +3,7 @@
     {
       "id": 1,
       "topic": "JAMES BOND",
-      "phrase": "ADORA RUBARE OGGETTI E NASCONDERli IN LUOGHI OSCURIDEVE IL SUO NOME A UN ORNITOLOGO",
+      "phrase": "DEVE IL SUO NOME A UN ORNITOLOGO",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
@@ -118,7 +118,7 @@
     {
       "id": 6,
       "topic": "IL FURETTO",
-      "phrase": "ADORA RUBARE E NASCONDERE OGGETTI IN LUOGHI OSCURI",
+      "phrase": "ADORA RUBARE OGGETTI E NASCONDERli IN LUOGHI OSCURI",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "900", "value": 900, "type": "score", "color": "#82C91E"},
@@ -141,7 +141,7 @@
     {
       "id": 7,
       "topic":  "SUL RED CARPET",
-      "phrase": "SFILATA DEI DIVI SOTTO UNA PIOGGIA DI FLASH",
+      "phrase": "LA SFILATA DEI DIVI SOTTO UNA PIOGGIA DI FLASH",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
         {"label": "", "value": 0, "type": "perdetutto", "color": "#1C2833"},
