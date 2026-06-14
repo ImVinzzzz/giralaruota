@@ -476,15 +476,20 @@ function renderVowels() {
 }
 
 function syncVowels() {
-  const canBuy = (G.phase==='spin'||G.phase==='guess'||G.phase==='raddoppia');
+  const canBuy = (G.phase==='spin' && !G.spinning);
   document.querySelectorAll('.vow-key').forEach(b => {
     if (!G.usedLetters.has(b.textContent)) b.disabled = !canBuy;
   });
+  const vowSec = document.querySelector('.vowel-section');
+  if (vowSec) {
+    if (canBuy) vowSec.classList.remove('disabled');
+    else vowSec.classList.add('disabled');
+  }
 }
 
 function handleVowel(letter) {
   if (G.usedLetters.has(letter)) return;
-  if (G.phase!=='spin' && G.phase!=='guess' && G.phase!=='raddoppia') return;
+  if (G.phase!=='spin' || G.spinning) return;
 
   const p = G.players[G.curPlayer];
   if (p.roundScore < VOWEL_COST) {
@@ -687,6 +692,7 @@ function drawWheel(angleDeg) {
 function spinWheel() {
   if (G.spinning || G.phase!=='spin') return;
   G.spinning=true;
+  syncKeyboard();
   document.getElementById('btn-spin').disabled=true;
   document.getElementById('result-val').textContent='...';
 
