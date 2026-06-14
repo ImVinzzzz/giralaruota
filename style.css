@@ -286,6 +286,11 @@ body::before {
   width:100%; padding:8px 0;
   border-top:1px solid rgba(255,215,0,0.18);
   border-bottom:1px solid rgba(255,215,0,0.18);
+  transition: opacity 0.3s;
+}
+.vowel-section.disabled {
+  opacity: 0.35;
+  pointer-events: none;
 }
 .vowel-section-lbl {
   font-family:'Bebas Neue',cursive; font-size:0.72rem;
