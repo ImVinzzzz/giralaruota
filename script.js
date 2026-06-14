@@ -773,9 +773,8 @@ function onSpinDone(idx) {
   } else if (seg.type==='perdetutto') {
     playSound('perde');
     const name = G.players[G.curPlayer].name;
-    showEvent('💀','PERDE TUTTO!',`${name} perde tutti i punti accumulati!`, ()=>{
+    showEvent('💀','PERDE TUTTO!',`${name} perde i punti della manche in corso!`, ()=>{
       G.players[G.curPlayer].roundScore = 0;
-      G.players[G.curPlayer].totalScore = 0;
       renderScores(); nextPlayer();
     });
   } else if (seg.type==='raddoppia') {
