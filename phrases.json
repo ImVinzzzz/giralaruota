@@ -26,7 +26,7 @@
     {
       "id": 2,
       "topic": "LA CALIFORNIA",
-      "phrase": "LA PUOI TROVARE ANCHE IN PROVINCIA DI LIVORNO",
+      "phrase": "PUOI TROVARLA ANCHE IN PROVINCIA DI LIVORNO",
       "wheel": [
         {"label": "500", "value": 500, "type": "score", "color": "#1971C2"},
         {"label": "300", "value": 300, "type": "score", "color": "#BE4BDB"},
