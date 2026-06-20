@@ -119,8 +119,11 @@ function normalizeBoardEntry(board) {
    LOAD BOARDS
    ──────────────────────────────────────────────────────────── */
 async function loadBoards() {
+  const selectElem = document.getElementById('phrases-select');
+  const filename = selectElem ? selectElem.value : 'phrases.json';
+
   try {
-    const r = await fetch('phrases.json');
+    const r = await fetch(`datas/${filename}`);
     if (!r.ok) throw new Error('no json');
     const d = await r.json();
     G.boardsMeta = d;
@@ -229,10 +232,13 @@ async function saveBoardsJson() {
 
   const jsonText = JSON.stringify(payload, null, 2);
 
+  const selectElem = document.getElementById('phrases-select');
+  const filename = selectElem ? selectElem.value : 'phrases.json';
+
   if (window.showSaveFilePicker) {
     try {
       const handle = await window.showSaveFilePicker({
-        suggestedName: 'phrases.json',
+        suggestedName: filename,
         types: [{
           description: 'File JSON',
           accept: { 'application/json': ['.json'] }
@@ -241,7 +247,7 @@ async function saveBoardsJson() {
       const writable = await handle.createWritable();
       await writable.write(jsonText);
       await writable.close();
-      toast('phrases.json aggiornato correttamente');
+      toast(`${filename} aggiornato correttamente`);
       return;
     } catch {
       // Se l'utente annulla il salvataggio, si usa il fallback download.
@@ -252,13 +258,13 @@ async function saveBoardsJson() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = 'phrases.json';
+  link.download = filename;
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
   URL.revokeObjectURL(url);
 
-  toast('Download pronto: sostituisci il file phrases.json nel progetto');
+  toast(`Download pronto: sostituisci il file ${filename} nel progetto (cartella datas)`);
 }
 
 /* ────────────────────────────────────────────────────────────
@@ -275,7 +281,7 @@ function updatePlayerInputs() {
   const count = getPlayerCount();
   const details = document.getElementById('players-details');
 
-  details.style.display = count > 0 ? 'flex' : 'none';
+  details.style.display = count > 0 ? 'grid' : 'none';
 
   for (let i = 1; i <= 6; i++) {
     const row = document.getElementById(`player-row-${i}`);
