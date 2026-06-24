@@ -582,7 +582,7 @@ function drawWheel(angleDeg) {
   const n = segs.length;
   let totalWeight = 0;
   const segWeights = segs.map(seg => {
-    const w = (seg.type === "passamano" || seg.type === "perdetutto" || seg.type === "raddoppia") ? 1 : 3;
+    const w = 1;
     totalWeight += w;
     return w;
   });
@@ -661,12 +661,10 @@ function drawWheel(angleDeg) {
       const dist  = R*0.64;
       if (lines.length===1) {
         let fs = seg.type==='score' ? (seg.value>=1000?11:13) : (seg.label.length>8?10:12);
-        if (w === 1) fs = Math.min(fs, 8); // smaller font for thin slices
         ctx.font = `bold ${fs}px Oswald,sans-serif`;
         ctx.fillText(seg.label, dist, 5);
       } else {
         let fs = 10;
-        if (w === 1) fs = 8;
         ctx.font = `bold ${fs}px Oswald,sans-serif`;
         ctx.fillText(lines[0], dist, -4);
         ctx.fillText(lines[1], dist,  9);
@@ -707,7 +705,7 @@ function spinWheel() {
 
   let totalWeight = 0;
   const segWeights = segs.map(seg => {
-    const w = (seg.type === 'passamano' || seg.type === 'perdetutto' || seg.type === 'raddoppia') ? 1 : 3;
+    const w = 1;
     totalWeight += w;
     return w;
   });
