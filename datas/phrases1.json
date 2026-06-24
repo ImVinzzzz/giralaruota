@@ -28,7 +28,7 @@
         {"label": "", "value": 0, "type": "passamano", "color": "#E9ECEF"},
         {"label": "", "value": 200, "type": "score", "color": "#FF8700"},
         {"label": "", "value": 900, "type": "score", "color": "#BE0AFF"},
-        {"label": "", "value": 0, "type": "perdetutto", "color": "#212529"},
+        {"label": "", "value": 0, "type": "perdetutto", "color": "#212529"}
       ]
     },
     {
