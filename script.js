@@ -1017,33 +1017,12 @@ async function populatePhrasesSelect() {
     return;
   }
   try {
-    const response = await fetch("datas/");
+    const response = await fetch("datas/index.json");
     if (!response.ok) {
-      throw new Error("Errore nel caricamento della cartella datas");
+      throw new Error("Errore nel caricamento del file datas/index.json");
     }
-    const htmlText = await response.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlText, "text/html");
-    const links = Array.from(doc.querySelectorAll("a"));
-    const jsonFiles = [];
-    const regex = /href="([^"]+\.json)"/gi;
-    let match;
-    while ((match = regex.exec(htmlText)) !== null) {
-      const filename = decodeURIComponent(match[1].split("/").pop());
-      if (!jsonFiles.includes(filename)) {
-        jsonFiles.push(filename);
-      }
-    }
-    links.forEach(link => {
-      const href = link.getAttribute("href");
-      if (href && href.endsWith(".json")) {
-        const filename = decodeURIComponent(href.split("/").pop());
-        if (!jsonFiles.includes(filename)) {
-          jsonFiles.push(filename);
-        }
-      }
-    });
-    if (jsonFiles.length === 0) {
+    const jsonFiles = await response.json();
+    if (!Array.isArray(jsonFiles) || jsonFiles.length === 0) {
       return;
     }
     jsonFiles.sort();
@@ -1060,6 +1039,12 @@ async function populatePhrasesSelect() {
     });
   } catch (error) {
     console.error("Errore nel popolamento dinamico del select:", error);
+    selectElem.innerHTML = "";
+    const option = document.createElement("option");
+    option.value = "Cinque.json";
+    option.textContent = "Cinque";
+    option.selected = true;
+    selectElem.appendChild(option);
   }
 }
 
