@@ -401,11 +401,13 @@
       background: rgba(255, 82, 82, 0.3) !important;
       border: 1.5px solid #ff5252 !important;
     }
+
     .cella-anteprima.letter.errore-cella {
       background: #ff5252 !important;
       color: #ffffff !important;
       border: 1.5px solid #ff1a1a !important;
     }
+
     .pulsante-azione:disabled {
       opacity: 0.5;
       cursor: not-allowed;
@@ -644,8 +646,46 @@
       }
 
       // Mescola gli spicchi
-      mescolaArray(spicchi);
+      mescolaSenzaAdiacenti(spicchi);
       return spicchi;
+    }
+
+    function haAdiacentiUguali(array) {
+      const n = array.length;
+      if (n <= 1) return false;
+      for (let i = 0; i < n; i++) {
+        const corr = array[i];
+        const succ = array[(i + 1) % n];
+        if (corr.type === succ.type) {
+          if (corr.type === "score") {
+            if (corr.value === succ.value) return true;
+          } else {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    function mescolaSenzaAdiacenti(array) {
+      let tentativi = 0;
+      const maxTentativi = 2000;
+      const copia = array.slice();
+      
+      while (tentativi < maxTentativi) {
+        mescolaArray(copia);
+        if (!haAdiacentiUguali(copia)) {
+          for (let i = 0; i < array.length; i++) {
+            array[i] = copia[i];
+          }
+          return;
+        }
+        tentativi++;
+      }
+      
+      for (let i = 0; i < array.length; i++) {
+        array[i] = copia[i];
+      }
     }
 
     function mescolaArray(array) {
@@ -942,7 +982,7 @@
       document.getElementById("btn-mescola").onclick = function () {
         const dati = datiTabelloni[indiceTabAttivo];
         if (dati) {
-          mescolaArray(dati.wheel);
+          mescolaSenzaAdiacenti(dati.wheel);
           aggiornaAnteprime();
         }
       };
