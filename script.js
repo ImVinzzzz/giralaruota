@@ -876,11 +876,22 @@ function renderScores() {
    DOTS
    ──────────────────────────────────────────────────────────── */
 function updateDots() {
-  document.querySelectorAll('.g-dot').forEach((d,i)=>{
-    d.className='g-dot';
-    if (i<G.curBoard)  d.classList.add('done');
-    if (i===G.curBoard) d.classList.add('now');
-  });
+  const container = document.getElementById("g-dots");
+  if (!container) {
+    return;
+  }
+  container.innerHTML = "";
+  for (let i = 0; i < G.boards.length; i++) {
+    const dot = document.createElement("div");
+    dot.className = "g-dot";
+    if (i < G.curBoard) {
+      dot.classList.add("done");
+    }
+    if (i === G.curBoard) {
+      dot.classList.add("now");
+    }
+    container.appendChild(dot);
+  }
 }
 
 /* ────────────────────────────────────────────────────────────

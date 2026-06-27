@@ -229,7 +229,7 @@ body::before {
 .g-topic-val { font-family:'Bebas Neue',cursive; font-size:2.5rem; letter-spacing:3px; color:var(--gold); }
 .g-dots-wrap { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
 .g-dots-lbl { font-size:0.62rem; letter-spacing:3px; color:rgba(255,255,255,0.35); }
-.g-dots { display:flex; gap:7px; }
+.g-dots { display:grid; grid-template-columns:repeat(5, auto); justify-content:end; gap:0.4rem; }
 .g-dot {
   width:11px; height:11px; border-radius:50%;
   background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25);
