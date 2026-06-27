@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor Tabelloni - Gira la Ruota</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --oro: #FFD700;
+      --oro-scuro: #8B6914;
+      --blu-scuro: #070B25;
+      --blu-medio: #0E1540;
+      --blu-chiaro: #1A2260;
+      --cella-sfondo: #F5F0E0;
+      --cella-bordo: #C8C0A0;
+      --cella-vuota: #0E164A;
+      --cella-vuota-bordo: rgba(255, 255, 255, 0.18);
+      --ombra-oro: 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Oswald", sans-serif;
+      background-color: var(--blu-scuro);
+      color: #ffffff;
+      padding: 20px;
+      min-height: 100vh;
+      background-image: radial-gradient(ellipse at top, #1a2260 0%, #070b25 70%);
+    }
+
+    .contenitore {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(14, 21, 64, 0.85);
+      border: 2px solid var(--oro-scuro);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-family: "Bebas Neue", cursive;
+      font-size: 3rem;
+      letter-spacing: 3px;
+      color: var(--oro);
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: var(--ombra-oro);
+    }
+
+    .sezione-setup {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    }
+
+    .sezione-setup label {
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .selettore {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.1rem;
+      padding: 6px 12px;
+      background: var(--blu-scuro);
+      color: #fff;
+      border: 2px solid var(--oro-scuro);
+      border-radius: 8px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .selettore:focus {
+      border-color: var(--oro);
+      box-shadow: var(--ombra-oro);
+    }
+
+    .tab-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tab-pulsante {
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      padding: 10px 20px;
+      background: var(--blu-chiaro);
+      color: #fff;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .tab-pulsante.attivo {
+      background: var(--oro);
+      color: var(--blu-scuro);
+      border-color: var(--oro);
+      box-shadow: var(--ombra-oro);
+    }
+
+    .tab-pulsante:hover:not(.attivo) {
+      background: rgba(255, 215, 0, 0.15);
+      border-color: var(--oro-scuro);
+    }
+
+    .contenuto-editor {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .contenuto-editor {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-colonna {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .gruppo-input {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .gruppo-input label {
+      font-size: 1rem;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .campo-testo,
+    .campo-numero {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.1rem;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(255, 215, 0, 0.35);
+      border-radius: 8px;
+      color: #fff;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .campo-testo:focus,
+    .campo-numero:focus {
+      border-color: var(--oro);
+      box-shadow: var(--ombra-oro);
+    }
+
+    .campo-testo {
+      text-transform: uppercase;
+    }
+
+    .riga-parametri {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .preview-colonna {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .anteprima-griglia-titolo {
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.5rem;
+      color: var(--oro);
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .griglia-tabellone {
+      display: grid;
+      grid-template-columns: repeat(14, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 3px;
+      background: var(--blu-scuro);
+      padding: 8px;
+      border-radius: 8px;
+      border: 2px solid var(--blu-chiaro);
+      aspect-ratio: 14 / 4;
+      width: 100%;
+    }
+
+    .cella-anteprima {
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.2vw;
+      font-weight: bold;
+      aspect-ratio: 1;
+    }
+
+    @media (min-width: 1200px) {
+      .cella-anteprima {
+        font-size: 1.35rem;
+      }
+    }
+
+    .cella-anteprima.empty {
+      background: var(--cella-vuota);
+      border: 1px solid var(--cella-vuota-bordo);
+    }
+
+    .cella-anteprima.space {
+      background: var(--cella-vuota);
+      border: 1px solid var(--cella-vuota-bordo);
+    }
+
+    .cella-anteprima.letter {
+      background: var(--cella-sfondo);
+      border: 1.5px solid var(--cella-bordo);
+      color: var(--blu-scuro);
+    }
+
+    .avviso-errore {
+      color: #ff5252;
+      background: rgba(255, 82, 82, 0.15);
+      border: 1px solid #ff5252;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .sezione-ruota {
+      border: 1px solid rgba(255, 215, 0, 0.25);
+      border-radius: 10px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .ruota-titolo-riga {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .ruota-titolo {
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.4rem;
+      color: var(--oro);
+      letter-spacing: 1px;
+    }
+
+    .lista-spicchi {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .lista-spicchi {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .spicchio-anteprima {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      height: 38px;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .spicchio-chiaro {
+      color: #070B25;
+      text-shadow: none;
+    }
+
+    .sezione-json {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 215, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .json-titolo {
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.6rem;
+      color: var(--oro);
+      letter-spacing: 1px;
+    }
+
+    .area-codice {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9rem;
+      background: #04081c;
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      border-radius: 8px;
+      padding: 15px;
+      width: 100%;
+      height: 250px;
+      color: #a9ffb2;
+      resize: vertical;
+      outline: none;
+    }
+
+    .area-codice:focus {
+      border-color: var(--oro);
+    }
+
+    .pulsanti-gruppo {
+      display: flex;
+      gap: 12px;
+    }
+
+    .pulsante-azione {
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .pulsante-principale {
+      background: linear-gradient(135deg, var(--oro), var(--oro-scuro));
+      color: var(--blu-scuro);
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    }
+
+    .pulsante-principale:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 215, 0, 0.45);
+    }
+
+    .pulsante-secondario {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+    }
+
+    .pulsante-secondario:hover {
+      border-color: var(--oro);
+      color: var(--oro);
+      background: rgba(255, 215, 0, 0.08);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--blu-medio);
+      border: 2px solid var(--oro);
+      border-radius: 50px;
+      padding: 12px 30px;
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      color: var(--oro);
+      z-index: 999;
+      transition: transform 0.4s cubic-bezier(0.22, 1.4, 0.36, 1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .toast.mostra {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .cella-anteprima.errore-cella {
+      background: rgba(255, 82, 82, 0.3) !important;
+      border: 1.5px solid #ff5252 !important;
+    }
+    .cella-anteprima.letter.errore-cella {
+      background: #ff5252 !important;
+      color: #ffffff !important;
+      border: 1.5px solid #ff1a1a !important;
+    }
+    .pulsante-azione:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contenitore">
+    <h1>EDITOR TABELLONI - GIRA LA RUOTA</h1>
+
+    <div class="sezione-setup">
+      <label for="selettore-tabelloni">Numero di Tabelloni:</label>
+      <select id="selettore-tabelloni" class="selettore">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+
+    <div class="tab-container" id="contenitore-tab">
+      <!-- Generato dinamicamente -->
+    </div>
+
+    <div class="contenuto-editor">
+      <div class="form-colonna">
+        <div class="gruppo-input">
+          <label for="input-materia">Materia / Argomento</label>
+          <input type="text" id="input-materia" class="campo-testo" placeholder="Es. CINEMA, STORIA...">
+        </div>
+
+        <div class="gruppo-input">
+          <label for="input-frase">Frase</label>
+          <input type="text" id="input-frase" class="campo-testo" placeholder="Inserisci la frase da indovinare">
+        </div>
+
+        <div class="riga-parametri">
+          <div class="gruppo-input">
+            <label for="input-perdetutto">Quantità Perdetutto</label>
+            <input type="number" id="input-perdetutto" class="campo-numero" min="0" max="10" value="2">
+          </div>
+          <div class="gruppo-input">
+            <label for="input-passamano">Quantità Passamano</label>
+            <input type="number" id="input-passamano" class="campo-numero" min="0" max="10" value="2">
+          </div>
+        </div>
+
+        <div class="riga-parametri">
+          <div class="gruppo-input">
+            <label for="input-raddoppia">Quantità Raddoppia</label>
+            <input type="number" id="input-raddoppia" class="campo-numero" min="0" max="10" value="1">
+          </div>
+          <div class="gruppo-input">
+            <label for="input-spicchio-massimo">Spicchio Massimo (Punti)</label>
+            <input type="number" id="input-spicchio-massimo" class="campo-numero" min="100" max="10000" step="100"
+              value="1000">
+          </div>
+        </div>
+
+        <div class="gruppo-input" style="margin-top: 10px;">
+          <label for="input-nome-partita">Nome partita</label>
+          <input type="text" id="input-nome-partita" class="campo-testo" style="text-transform: none;"
+            placeholder="Es. Partita" value="Partita">
+        </div>
+      </div>
+
+      <div class="preview-colonna">
+        <div>
+          <div class="anteprima-griglia-titolo">Anteprima Griglia (14x4)</div>
+          <div class="griglia-tabellone" id="anteprima-griglia">
+            <!-- Generato dinamicamente -->
+          </div>
+        </div>
+
+        <div class="avviso-errore" id="errore-griglia">
+          La frase supera la capienza o contiene parole troppo lunghe per la griglia 14x4.
+        </div>
+
+        <div class="sezione-ruota">
+          <div class="ruota-titolo-riga">
+            <div class="ruota-titolo">Spicchi della Ruota (24 totali)</div>
+            <button class="pulsante-azione pulsante-secondario" style="font-size: 0.9rem; padding: 4px 12px;"
+              id="btn-mescola">
+              Mescola Ruota
+            </button>
+          </div>
+          <div class="lista-spicchi" id="contenitore-spicchi">
+            <!-- Generato dinamicamente -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sezione-json">
+      <div class="json-titolo">Codice JSON Generato</div>
+      <textarea id="area-json" class="area-codice" readonly></textarea>
+      <div class="pulsanti-gruppo">
+        <button class="pulsante-azione pulsante-principale" id="btn-copia">Copia JSON</button>
+        <button class="pulsante-azione pulsante-secondario" id="btn-scarica">Scarica Partita.json</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="elemento-toast">Copiato negli appunti!</div>
+
+  <script>
+    // Stato globale dell'applicazione
+    const CONFIG = {
+      colonne: 14,
+      righe: 4
+    };
+
+    let numeroTabelloni = 5;
+    let indiceTabAttivo = 0;
+    let datiTabelloni = [];
+
+    // Colori associati a valori/tipi
+    const COLORI = {
+      perdetutto: "#212529",
+      passamano: "#F8F9FA",
+      raddoppia: "#DBB42C",
+      massimo: "#A47E1B",
+      valori: {
+        100: "#FF0000",
+        200: "#FF8700",
+        300: "#FFD300",
+        400: "#DEFF0A",
+        500: "#A1FF0A",
+        600: "#0AFF99",
+        700: "#147DF5",
+        800: "#580AFF",
+        900: "#BE0AFF"
+      }
+    };
+
+    // Ottieni il codice colore associato a uno spicchio
+    function ottieniColoreSpicchio(valore, tipo, valoreMassimo) {
+      if (tipo === "perdetutto") {
+        return COLORI.perdetutto;
+      }
+      if (tipo === "passamano") {
+        return COLORI.passamano;
+      }
+      if (tipo === "raddoppia") {
+        return COLORI.raddoppia;
+      }
+      if (valore === valoreMassimo) {
+        return COLORI.massimo;
+      }
+      return COLORI.valori[valore] || COLORI.massimo;
+    }
+
+    // Inizializza i dati dei tabelloni con valori di default
+    function inizializzaDati() {
+      datiTabelloni = [];
+      for (let i = 0; i < 10; i++) {
+        datiTabelloni.push({
+          id: i + 1,
+          topic: "",
+          phrase: "",
+          perdeCount: 2,
+          passaCount: 2,
+          raddoppiaCount: 1,
+          maxScore: 1000,
+          wheel: generaSlicesBilanciate(2, 2, 1, 1000)
+        });
+      }
+      // Esempio per il primo tabellone
+      datiTabelloni[0].topic = "JAMES BOND";
+      datiTabelloni[0].phrase = "DEVE IL SUO NOME A UN ORNITOLOGO DI PHILADELPHIA";
+    }
+
+    // Genera 24 spicchi bilanciati
+    function generaSlicesBilanciate(perde, passa, raddoppia, massimo) {
+      const spicchi = [];
+
+      // Aggiungi spicchi speciali
+      for (let i = 0; i < perde; i++) {
+        spicchi.push({ label: "", value: 0, type: "perdetutto", color: COLORI.perdetutto });
+      }
+      for (let i = 0; i < passa; i++) {
+        spicchi.push({ label: "", value: 0, type: "passamano", color: COLORI.passamano });
+      }
+      for (let i = 0; i < raddoppia; i++) {
+        spicchi.push({ label: "", value: 0, type: "raddoppia", color: COLORI.raddoppia });
+      }
+
+      // Spicchio con il valore massimo
+      spicchi.push({ label: "", value: massimo, type: "score", color: ottieniColoreSpicchio(massimo, "score", massimo) });
+
+      // Spicchi restanti da riempire con valori bilanciati da 100 a 900
+      const nRimanenti = 24 - spicchi.length;
+      if (nRimanenti > 0) {
+        const baseValori = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+        const conteggi = {};
+        baseValori.forEach(function (v) {
+          conteggi[v] = 0;
+        });
+
+        const valoriAggiunti = [];
+        while (valoriAggiunti.length < nRimanenti) {
+          let minVal = Infinity;
+          baseValori.forEach(function (v) {
+            if (conteggi[v] < minVal) {
+              minVal = conteggi[v];
+            }
+          });
+          const candidati = baseValori.filter(function (v) {
+            return conteggi[v] === minVal;
+          });
+          const indiceScelto = Math.floor(Math.random() * candidati.length);
+          const valoreScelto = candidati[indiceScelto];
+
+          valoriAggiunti.push(valoreScelto);
+          conteggi[valoreScelto] = conteggi[valoreScelto] + 1;
+        }
+
+        // Aggiungi gli spicchi numerici bilanciati alla ruota
+        valoriAggiunti.forEach(function (val) {
+          spicchi.push({
+            label: "",
+            value: val,
+            type: "score",
+            color: ottieniColoreSpicchio(val, "score", massimo)
+          });
+        });
+      }
+
+      // Mescola gli spicchi
+      mescolaArray(spicchi);
+      return spicchi;
+    }
+
+    function mescolaArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+
+    // Costruisce la matrice 14x4 della griglia partendo dalla frase
+    function costruisciGriglia(frase) {
+      if (!frase) {
+        const grigliaVuota = [];
+        for (let r = 0; r < CONFIG.righe; r++) {
+          const riga = [];
+          for (let c = 0; c < CONFIG.colonne; c++) {
+            riga.push({ type: "empty", char: null });
+          }
+          grigliaVuota.push(riga);
+        }
+        return { griglia: grigliaVuota, errore: false };
+      }
+
+      const parole = frase.toUpperCase().trim().split(" ");
+      const righeParole = [];
+      let rigaCorrente = [];
+      let lunghezzaCorrente = 0;
+      let erroreSuperamento = false;
+
+      for (let i = 0; i < parole.length; i++) {
+        const parola = parole[i];
+        if (parola.length > CONFIG.colonne) {
+          erroreSuperamento = true;
+        }
+        const spazioNecessario = lunghezzaCorrente === 0 ? parola.length : parola.length + 1;
+        if (lunghezzaCorrente + spazioNecessario <= CONFIG.colonne) {
+          rigaCorrente.push(parola);
+          lunghezzaCorrente = lunghezzaCorrente + spazioNecessario;
+        } else {
+          if (rigaCorrente.length > 0) {
+            righeParole.push(rigaCorrente);
+          }
+          rigaCorrente = [parola];
+          lunghezzaCorrente = parola.length;
+        }
+      }
+      if (rigaCorrente.length > 0) {
+        righeParole.push(rigaCorrente);
+      }
+
+      if (righeParole.length > CONFIG.righe) {
+        erroreSuperamento = true;
+      }
+
+      const griglia = [];
+      for (let r = 0; r < CONFIG.righe; r++) {
+        const paroleRiga = righeParole[r] || [];
+        const stringaRiga = paroleRiga.join(" ");
+        const colonnaInizio = Math.floor((CONFIG.colonne - stringaRiga.length) / 2);
+        const celle = [];
+
+        for (let c = 0; c < CONFIG.colonne; c++) {
+          const indice = c - colonnaInizio;
+          if (stringaRiga.length === 0 || indice < 0 || indice >= stringaRiga.length) {
+            celle.push({ type: "empty", char: null });
+          } else if (stringaRiga[indice] === " ") {
+            celle.push({ type: "space", char: null });
+          } else {
+            celle.push({ type: "letter", char: stringaRiga[indice] });
+          }
+        }
+        griglia.push(celle);
+      }
+
+      return { griglia: griglia, errore: erroreSuperamento };
+    }
+
+    // Renderizza l'interfaccia dei tab
+    function renderizzaTab() {
+      const contenitore = document.getElementById("contenitore-tab");
+      contenitore.innerHTML = "";
+
+      for (let i = 0; i < numeroTabelloni; i++) {
+        const pulsante = document.createElement("button");
+        pulsante.className = "tab-pulsante";
+        if (i === indiceTabAttivo) {
+          pulsante.classList.add("attivo");
+        }
+        pulsante.textContent = "TABELLONE " + (i + 1);
+        pulsante.onclick = (function (indice) {
+          return function () {
+            cambiaTab(indice);
+          };
+        })(i);
+        contenitore.appendChild(pulsante);
+      }
+    }
+
+    // Cambia il tab attivo
+    function cambiaTab(nuovoIndice) {
+      salvaDatiCorrenti();
+      indiceTabAttivo = nuovoIndice;
+      caricaDatiTabAttivo();
+      renderizzaTab();
+    }
+
+    // Salva i dati dei campi di input nello stato del tab attivo
+    function salvaDatiCorrenti() {
+      if (!datiTabelloni[indiceTabAttivo]) return;
+
+      const materiaVal = document.getElementById("input-materia").value.trim().toUpperCase();
+      const fraseVal = document.getElementById("input-frase").value.trim().toUpperCase();
+      const perdetuttoVal = parseInt(document.getElementById("input-perdetutto").value) || 0;
+      const passamanoVal = parseInt(document.getElementById("input-passamano").value) || 0;
+      const raddoppiaVal = parseInt(document.getElementById("input-raddoppia").value) || 0;
+      const spicchioMassimoVal = parseInt(document.getElementById("input-spicchio-massimo").value) || 1000;
+
+      const dati = datiTabelloni[indiceTabAttivo];
+
+      // Se cambiano i parametri della ruota, la rigeneriamo
+      const parametriCambiati = (
+        dati.perdeCount !== perdetuttoVal ||
+        dati.passaCount !== passamanoVal ||
+        dati.raddoppiaCount !== raddoppiaVal ||
+        dati.maxScore !== spicchioMassimoVal
+      );
+
+      dati.topic = materiaVal;
+      dati.phrase = fraseVal;
+      dati.perdeCount = perdetuttoVal;
+      dati.passaCount = passamanoVal;
+      dati.raddoppiaCount = raddoppiaVal;
+      dati.maxScore = spicchioMassimoVal;
+
+      if (parametriCambiati || !dati.wheel || dati.wheel.length === 0) {
+        dati.wheel = generaSlicesBilanciate(perdetuttoVal, passamanoVal, raddoppiaVal, spicchioMassimoVal);
+      }
+    }
+
+    // Carica i dati del tab attivo nei campi di input
+    function caricaDatiTabAttivo() {
+      const dati = datiTabelloni[indiceTabAttivo];
+      if (!dati) return;
+
+      document.getElementById("input-materia").value = dati.topic;
+      document.getElementById("input-frase").value = dati.phrase;
+      document.getElementById("input-perdetutto").value = dati.perdeCount;
+      document.getElementById("input-passamano").value = dati.passaCount;
+      document.getElementById("input-raddoppia").value = dati.raddoppiaCount;
+      document.getElementById("input-spicchio-massimo").value = dati.maxScore;
+
+      aggiornaAnteprime();
+    }
+
+    // Aggiorna la griglia visiva e la lista degli spicchi della ruota
+    function aggiornaAnteprime() {
+      const dati = datiTabelloni[indiceTabAttivo];
+      if (!dati) return;
+
+      // 1. Griglia
+      const risultatoGriglia = costruisciGriglia(dati.phrase);
+      const contenitoreGriglia = document.getElementById("anteprima-griglia");
+      contenitoreGriglia.innerHTML = "";
+
+      risultatoGriglia.griglia.forEach(function (riga) {
+        riga.forEach(function (cella) {
+          const divCella = document.createElement("div");
+          divCella.className = "cella-anteprima " + cella.type;
+          if (cella.type === "letter") {
+            divCella.textContent = cella.char;
+          }
+          if (risultatoGriglia.errore) {
+            divCella.classList.add("errore-cella");
+          }
+          contenitoreGriglia.appendChild(divCella);
+        });
+      });
+
+      const elementoErrore = document.getElementById("errore-griglia");
+      if (risultatoGriglia.errore) {
+        elementoErrore.style.display = "block";
+      } else {
+        elementoErrore.style.display = "none";
+      }
+
+      // 2. Ruota
+      const contenitoreSpicchi = document.getElementById("contenitore-spicchi");
+      contenitoreSpicchi.innerHTML = "";
+
+      dati.wheel.forEach(function (spicchio) {
+        const divSpicchio = document.createElement("div");
+        divSpicchio.className = "spicchio-anteprima";
+        divSpicchio.style.backgroundColor = spicchio.color;
+
+        // Se lo spicchio è molto chiaro (es. passamano #F8F9FA), invertiamo il testo per leggibilità
+        if (spicchio.color.toUpperCase() === "#F8F9FA") {
+          divSpicchio.classList.add("spicchio-chiaro");
+        }
+
+        if (spicchio.type === "score") {
+          divSpicchio.textContent = spicchio.value;
+        } else {
+          divSpicchio.textContent = spicchio.type.toUpperCase();
+        }
+        contenitoreSpicchi.appendChild(divSpicchio);
+      });
+
+      // 3. JSON
+      generaJSON();
+      aggiornaStatoPulsanti();
+    }
+
+    function haErroriNeiTabelloni() {
+      for (let i = 0; i < numeroTabelloni; i++) {
+        const dati = datiTabelloni[i];
+        if (dati) {
+          const risultato = costruisciGriglia(dati.phrase);
+          if (risultato.errore) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    function aggiornaStatoPulsanti() {
+      const errore = haErroriNeiTabelloni();
+      const btnCopia = document.getElementById("btn-copia");
+      const btnScarica = document.getElementById("btn-scarica");
+      if (btnCopia) btnCopia.disabled = errore;
+      if (btnScarica) btnScarica.disabled = errore;
+    }
+
+    // Genera il codice JSON e lo visualizza nell'area di testo
+    function generaJSON() {
+      const tabelloniEsportazione = [];
+      for (let i = 0; i < numeroTabelloni; i++) {
+        const dati = datiTabelloni[i];
+        tabelloniEsportazione.push({
+          id: dati.id,
+          topic: dati.topic || "ARGOMENTO",
+          phrase: dati.phrase || "FRASE",
+          wheel: dati.wheel
+        });
+      }
+
+      const payload = {
+        boards: tabelloniEsportazione
+      };
+
+      document.getElementById("area-json").value = JSON.stringify(payload, null, 2);
+    }
+
+    // Mostra un feedback a schermo (Toast)
+    function mostraToast(messaggio) {
+      const toast = document.getElementById("elemento-toast");
+      toast.textContent = messaggio;
+      toast.classList.add("mostra");
+      setTimeout(function () {
+        toast.classList.remove("mostra");
+      }, 2000);
+    }
+
+    // Configura i listener degli eventi
+    function configuraEventi() {
+      // Cambio numero di tabelloni
+      document.getElementById("selettore-tabelloni").onchange = function (e) {
+        salvaDatiCorrenti();
+        numeroTabelloni = parseInt(e.target.value);
+        if (indiceTabAttivo >= numeroTabelloni) {
+          indiceTabAttivo = numeroTabelloni - 1;
+        }
+        renderizzaTab();
+        caricaDatiTabAttivo();
+      };
+
+      // Aggiornamento live dei campi
+      const campi = ["input-materia", "input-frase", "input-perdetutto", "input-passamano", "input-raddoppia", "input-spicchio-massimo"];
+      campi.forEach(function (id) {
+        document.getElementById(id).oninput = function () {
+          salvaDatiCorrenti();
+          aggiornaAnteprime();
+        };
+      });
+
+      // Pulsante mescola ruota
+      document.getElementById("btn-mescola").onclick = function () {
+        const dati = datiTabelloni[indiceTabAttivo];
+        if (dati) {
+          mescolaArray(dati.wheel);
+          aggiornaAnteprime();
+        }
+      };
+
+      // Pulsante copia JSON
+      document.getElementById("btn-copia").onclick = function () {
+        const areaCodice = document.getElementById("area-json");
+        areaCodice.select();
+        document.execCommand("copy");
+        mostraToast("JSON copiato negli appunti!");
+      };
+
+      // Pulsante scarica JSON
+      document.getElementById("btn-scarica").onclick = function () {
+        generaJSON();
+        const jsonContent = document.getElementById("area-json").value;
+        const blob = new Blob([jsonContent], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        let nomeFile = document.getElementById("input-nome-partita").value.trim();
+        if (nomeFile === "") {
+          nomeFile = "phrases";
+        }
+        a.href = url;
+        a.download = nomeFile + ".json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        mostraToast("File scaricato correttamente!");
+      };
+
+      // Aggiornamento testo pulsante scarica
+      document.getElementById("input-nome-partita").oninput = function () {
+        let nomeFile = this.value.trim();
+        if (nomeFile === "") {
+          nomeFile = "Partita";
+        }
+        document.getElementById("btn-scarica").textContent = "Scarica " + nomeFile + ".json";
+      };
+    }
+
+    // Inizializzazione pagina
+    window.onload = function () {
+      inizializzaDati();
+      renderizzaTab();
+      caricaDatiTabAttivo();
+      configuraEventi();
+    };
+  </script>
+</body>
+
+</html>
