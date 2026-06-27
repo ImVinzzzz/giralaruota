@@ -864,10 +864,15 @@
       for (let i = 0; i < numeroTabelloni; i++) {
         const dati = datiTabelloni[i];
         if (dati) {
+          if (!dati.topic || dati.topic.trim() === "" || !dati.phrase || dati.phrase.trim() === "") {
+            return true;
+          }
           const risultato = costruisciGriglia(dati.phrase);
           if (risultato.errore) {
             return true;
           }
+        } else {
+          return true;
         }
       }
       return false;
