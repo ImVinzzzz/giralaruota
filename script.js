@@ -1009,9 +1009,65 @@ function restartGame() {
 }
 
 /* ────────────────────────────────────────────────────────────
+   POPULATE SELECT
+   ──────────────────────────────────────────────────────────── */
+async function populatePhrasesSelect() {
+  const selectElem = document.getElementById("phrases-select");
+  if (!selectElem) {
+    return;
+  }
+  try {
+    const response = await fetch("datas/");
+    if (!response.ok) {
+      throw new Error("Errore nel caricamento della cartella datas");
+    }
+    const htmlText = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, "text/html");
+    const links = Array.from(doc.querySelectorAll("a"));
+    const jsonFiles = [];
+    const regex = /href="([^"]+\.json)"/gi;
+    let match;
+    while ((match = regex.exec(htmlText)) !== null) {
+      const filename = decodeURIComponent(match[1].split("/").pop());
+      if (!jsonFiles.includes(filename)) {
+        jsonFiles.push(filename);
+      }
+    }
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href && href.endsWith(".json")) {
+        const filename = decodeURIComponent(href.split("/").pop());
+        if (!jsonFiles.includes(filename)) {
+          jsonFiles.push(filename);
+        }
+      }
+    });
+    if (jsonFiles.length === 0) {
+      return;
+    }
+    jsonFiles.sort();
+    selectElem.innerHTML = "";
+    jsonFiles.forEach((filename, idx) => {
+      const option = document.createElement("option");
+      option.value = filename;
+      const label = filename.replace(/\.json$/i, "");
+      option.textContent = label;
+      if (idx === 0) {
+        option.selected = true;
+      }
+      selectElem.appendChild(option);
+    });
+  } catch (error) {
+    console.error("Errore nel popolamento dinamico del select:", error);
+  }
+}
+
+/* ────────────────────────────────────────────────────────────
    INIT
    ──────────────────────────────────────────────────────────── */
 async function init() {
+  await populatePhrasesSelect();
   await loadBoards();
   document.getElementById('player-count').value = '';
   updatePlayerInputs();
