@@ -2,8 +2,8 @@
   "boards": [
     {
       "id": 1,
-      "topic": "JAMES BOND",
-      "phrase": "DEVE IL SUO NOME A UN ORNITOLOGO DI PHILADELPHIA",
+      "topic": "NONNO NANNI",
+      "phrase": "MOZZARELLA E STRACCHINO A BUON MERCATO",
       "wheel": [
         {"label": "", "value": 0, "type": "perdetutto", "color": "#212529"},
         {"label": "", "value": 0, "type": "raddoppia", "color": "#DBB42C"},
