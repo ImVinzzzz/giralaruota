@@ -1,0 +1,759 @@
+{
+  "boards": [
+    {
+      "id": 1,
+      "topic": "JAMES BOND",
+      "phrase": "DEVE IL SUO NOME A UN ORNITOLOGO",
+      "wheel": [
+        {
+          "label": "",
+          "value": 300,
+          "type": "score",
+          "color": "#FFD300"
+        },
+        {
+          "label": "",
+          "value": 200,
+          "type": "score",
+          "color": "#FF8700"
+        },
+        {
+          "label": "",
+          "value": 800,
+          "type": "score",
+          "color": "#580AFF"
+        },
+        {
+          "label": "",
+          "value": 100,
+          "type": "score",
+          "color": "#FF0000"
+        },
+        {
+          "label": "",
+          "value": 800,
+          "type": "score",
+          "color": "#580AFF"
+        },
+        {
+          "label": "",
+          "value": 200,
+          "type": "score",
+          "color": "#FF8700"
+        },
+        {
+          "label": "",
+          "value": 100,
+          "type": "score",
+          "color": "#FF0000"
+        },
+        {
+          "label": "",
+          "value": 900,
+          "type": "score",
+          "color": "#BE0AFF"
+        },
+        {
+          "label": "",
+          "value": 400,
+          "type": "score",
+          "color": "#DEFF0A"
+        },
+        {
+          "label": "",
+          "value": 700,
+          "type": "score",
+          "color": "#147DF5"
+        },
+        {
+          "label": "",
+          "value": 1000,
+          "type": "score",
+          "color": "#A47E1B"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "perdetutto",
+          "color": "#212529"
+        },
+        {
+          "label": "",
+          "value": 900,
+          "type": "score",
+          "color": "#BE0AFF"
+        },
+        {
+          "label": "",
+          "value": 700,
+          "type": "score",
+          "color": "#147DF5"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "raddoppia",
+          "color": "#DBB42C"
+        },
+        {
+          "label": "",
+          "value": 400,
+          "type": "score",
+          "color": "#DEFF0A"
+        },
+        {
+          "label": "",
+          "value": 500,
+          "type": "score",
+          "color": "#A1FF0A"
+        },
+        {
+          "label": "",
+          "value": 600,
+          "type": "score",
+          "color": "#0AFF99"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "perdetutto",
+          "color": "#212529"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 500,
+          "type": "score",
+          "color": "#A1FF0A"
+        },
+        {
+          "label": "",
+          "value": 300,
+          "type": "score",
+          "color": "#FFD300"
+        },
+        {
+          "label": "",
+          "value": 600,
+          "type": "score",
+          "color": "#0AFF99"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "LA CALIFORNIA",
+      "phrase": "LA PUOI TROVARE IN PROVINCIA DI LIVORNO",
+      "wheel": [
+        {
+          "label": "",
+          "value": 200,
+          "type": "score",
+          "color": "#FF8700"
+        },
+        {
+          "label": "",
+          "value": 700,
+          "type": "score",
+          "color": "#147DF5"
+        },
+        {
+          "label": "",
+          "value": 100,
+          "type": "score",
+          "color": "#FF0000"
+        },
+        {
+          "label": "",
+          "value": 2000,
+          "type": "score",
+          "color": "#A47E1B"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 300,
+          "type": "score",
+          "color": "#FFD300"
+        },
+        {
+          "label": "",
+          "value": 800,
+          "type": "score",
+          "color": "#580AFF"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "raddoppia",
+          "color": "#DBB42C"
+        },
+        {
+          "label": "",
+          "value": 400,
+          "type": "score",
+          "color": "#DEFF0A"
+        },
+        {
+          "label": "",
+          "value": 500,
+          "type": "score",
+          "color": "#A1FF0A"
+        },
+        {
+          "label": "",
+          "value": 700,
+          "type": "score",
+          "color": "#147DF5"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "perdetutto",
+          "color": "#212529"
+        },
+        {
+          "label": "",
+          "value": 600,
+          "type": "score",
+          "color": "#0AFF99"
+        },
+        {
+          "label": "",
+          "value": 300,
+          "type": "score",
+          "color": "#FFD300"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 200,
+          "type": "score",
+          "color": "#FF8700"
+        },
+        {
+          "label": "",
+          "value": 800,
+          "type": "score",
+          "color": "#580AFF"
+        },
+        {
+          "label": "",
+          "value": 500,
+          "type": "score",
+          "color": "#A1FF0A"
+        },
+        {
+          "label": "",
+          "value": 400,
+          "type": "score",
+          "color": "#DEFF0A"
+        },
+        {
+          "label": "",
+          "value": 900,
+          "type": "score",
+          "color": "#BE0AFF"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "perdetutto",
+          "color": "#212529"
+        },
+        {
+          "label": "",
+          "value": 100,
+          "type": "score",
+          "color": "#FF0000"
+        },
+        {
+          "label": "",
+          "value": 600,
+          "type": "score",
+          "color": "#0AFF99"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "SUPEREROI",
+      "phrase": "COMBATTONO IL MALE E SBANCANO IL BOTTEGHINO",
+      "wheel": [
+        {
+          "label": "",
+          "value": 300,
+          "type": "score",
+          "color": "#FFD300"
+        },
+        {
+          "label": "",
+          "value": 500,
+          "type": "score",
+          "color": "#A1FF0A"
+        },
+        {
+          "label": "",
+          "value": 400,
+          "type": "score",
+          "color": "#DEFF0A"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "perdetutto",
+          "color": "#212529"
+        },
+        {
+          "label": "",
+          "value": 3000,
+          "type": "score",
+          "color": "#A47E1B"
+        },
+        {
+          "label": "",
+          "value": 600,
+          "type": "score",
+          "color": "#0AFF99"
+        },
+        {
+          "label": "",
+          "value": 800,
+          "type": "score",
+          "color": "#580AFF"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 300,
+          "type": "score",
+          "color": "#FFD300"
+        },
+        {
+          "label": "",
+          "value": 900,
+          "type": "score",
+          "color": "#BE0AFF"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "raddoppia",
+          "color": "#DBB42C"
+        },
+        {
+          "label": "",
+          "value": 700,
+          "type": "score",
+          "color": "#147DF5"
+        },
+        {
+          "label": "",
+          "value": 200,
+          "type": "score",
+          "color": "#FF8700"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "perdetutto",
+          "color": "#212529"
+        },
+        {
+          "label": "",
+          "value": 700,
+          "type": "score",
+          "color": "#147DF5"
+        },
+        {
+          "label": "",
+          "value": 600,
+          "type": "score",
+          "color": "#0AFF99"
+        },
+        {
+          "label": "",
+          "value": 500,
+          "type": "score",
+          "color": "#A1FF0A"
+        },
+        {
+          "label": "",
+          "value": 100,
+          "type": "score",
+          "color": "#FF0000"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 900,
+          "type": "score",
+          "color": "#BE0AFF"
+        },
+        {
+          "label": "",
+          "value": 800,
+          "type": "score",
+          "color": "#580AFF"
+        },
+        {
+          "label": "",
+          "value": 200,
+          "type": "score",
+          "color": "#FF8700"
+        },
+        {
+          "label": "",
+          "value": 400,
+          "type": "score",
+          "color": "#DEFF0A"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "LA CASA DEGLI SPIRITI",
+      "phrase": "STORIA DI UNA FAMIGLIA CHE VIVE IN SUD AMERICA",
+      "wheel": [
+        {
+          "label": "",
+          "value": 0,
+          "type": "perdetutto",
+          "color": "#212529"
+        },
+        {
+          "label": "",
+          "value": 200,
+          "type": "score",
+          "color": "#FF8700"
+        },
+        {
+          "label": "",
+          "value": 700,
+          "type": "score",
+          "color": "#147DF5"
+        },
+        {
+          "label": "",
+          "value": 900,
+          "type": "score",
+          "color": "#BE0AFF"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "raddoppia",
+          "color": "#DBB42C"
+        },
+        {
+          "label": "",
+          "value": 300,
+          "type": "score",
+          "color": "#FFD300"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "perdetutto",
+          "color": "#212529"
+        },
+        {
+          "label": "",
+          "value": 600,
+          "type": "score",
+          "color": "#0AFF99"
+        },
+        {
+          "label": "",
+          "value": 500,
+          "type": "score",
+          "color": "#A1FF0A"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 200,
+          "type": "score",
+          "color": "#FF8700"
+        },
+        {
+          "label": "",
+          "value": 700,
+          "type": "score",
+          "color": "#147DF5"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "raddoppia",
+          "color": "#DBB42C"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 800,
+          "type": "score",
+          "color": "#580AFF"
+        },
+        {
+          "label": "",
+          "value": 900,
+          "type": "score",
+          "color": "#BE0AFF"
+        },
+        {
+          "label": "",
+          "value": 800,
+          "type": "score",
+          "color": "#580AFF"
+        },
+        {
+          "label": "",
+          "value": 600,
+          "type": "score",
+          "color": "#0AFF99"
+        },
+        {
+          "label": "",
+          "value": 400,
+          "type": "score",
+          "color": "#DEFF0A"
+        },
+        {
+          "label": "",
+          "value": 4000,
+          "type": "score",
+          "color": "#A47E1B"
+        },
+        {
+          "label": "",
+          "value": 100,
+          "type": "score",
+          "color": "#FF0000"
+        },
+        {
+          "label": "",
+          "value": 300,
+          "type": "score",
+          "color": "#FFD300"
+        },
+        {
+          "label": "",
+          "value": 400,
+          "type": "score",
+          "color": "#DEFF0A"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "GIULIO CESARE",
+      "phrase": "AUTORE DI UN LIBRO SULLA GUERRA IN GALLIA",
+      "wheel": [
+        {
+          "label": "",
+          "value": 200,
+          "type": "score",
+          "color": "#FF8700"
+        },
+        {
+          "label": "",
+          "value": 100,
+          "type": "score",
+          "color": "#FF0000"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "perdetutto",
+          "color": "#212529"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "raddoppia",
+          "color": "#DBB42C"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "perdetutto",
+          "color": "#212529"
+        },
+        {
+          "label": "",
+          "value": 900,
+          "type": "score",
+          "color": "#BE0AFF"
+        },
+        {
+          "label": "",
+          "value": 800,
+          "type": "score",
+          "color": "#580AFF"
+        },
+        {
+          "label": "",
+          "value": 600,
+          "type": "score",
+          "color": "#0AFF99"
+        },
+        {
+          "label": "",
+          "value": 300,
+          "type": "score",
+          "color": "#FFD300"
+        },
+        {
+          "label": "",
+          "value": 500,
+          "type": "score",
+          "color": "#A1FF0A"
+        },
+        {
+          "label": "",
+          "value": 800,
+          "type": "score",
+          "color": "#580AFF"
+        },
+        {
+          "label": "",
+          "value": 700,
+          "type": "score",
+          "color": "#147DF5"
+        },
+        {
+          "label": "",
+          "value": 100,
+          "type": "score",
+          "color": "#FF0000"
+        },
+        {
+          "label": "",
+          "value": 600,
+          "type": "score",
+          "color": "#0AFF99"
+        },
+        {
+          "label": "",
+          "value": 200,
+          "type": "score",
+          "color": "#FF8700"
+        },
+        {
+          "label": "",
+          "value": 700,
+          "type": "score",
+          "color": "#147DF5"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "raddoppia",
+          "color": "#DBB42C"
+        },
+        {
+          "label": "",
+          "value": 400,
+          "type": "score",
+          "color": "#DEFF0A"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        },
+        {
+          "label": "",
+          "value": 500,
+          "type": "score",
+          "color": "#A1FF0A"
+        },
+        {
+          "label": "",
+          "value": 900,
+          "type": "score",
+          "color": "#BE0AFF"
+        },
+        {
+          "label": "",
+          "value": 5000,
+          "type": "score",
+          "color": "#A47E1B"
+        },
+        {
+          "label": "",
+          "value": 0,
+          "type": "passamano",
+          "color": "#F8F9FA"
+        }
+      ]
+    }
+  ]
+}
